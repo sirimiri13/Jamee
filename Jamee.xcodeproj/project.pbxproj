@@ -20,6 +20,7 @@
 		2DCA458425960B7C005F3BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458225960B7C005F3BBF /* Main.storyboard */; };
 		2DCA458625960B7D005F3BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458525960B7D005F3BBF /* Assets.xcassets */; };
 		2DCA458925960B7D005F3BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458725960B7D005F3BBF /* LaunchScreen.storyboard */; };
+		5CD986D82597B1490006D47B /* MyVoucherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD986D72597B1490006D47B /* MyVoucherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2DCA458525960B7D005F3BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DCA458825960B7D005F3BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DCA458A25960B7D005F3BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CD986D72597B1490006D47B /* MyVoucherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVoucherViewController.swift; sourceTree = "<group>"; };
 		6C205509776E642643444D66 /* Pods_Jamee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jamee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDCCCD9CAE015F671D99810D /* Pods-Jamee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jamee.debug.xcconfig"; path = "Target Support Files/Pods-Jamee/Pods-Jamee.debug.xcconfig"; sourceTree = "<group>"; };
 		EF052B9F848C0C3D9F2C08CC /* Pods-Jamee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jamee.release.xcconfig"; path = "Target Support Files/Pods-Jamee/Pods-Jamee.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				2D4D9A872597ADE9005F51AF /* HomeViewController.swift */,
 				2D9AB7C625987B610075D926 /* StoreTableViewController.swift */,
 				2D9AB7CD2598892F0075D926 /* OrderViewController.swift */,
+				5CD986D72597B1490006D47B /* MyVoucherViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */,
 				2D4D9A762597A589005F51AF /* TabBarViewController.swift in Sources */,
 				2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */,
+				5CD986D82597B1490006D47B /* MyVoucherViewController.swift in Sources */,
 				2D8B8FF325985644003CF7AF /* Extension.swift in Sources */,
 				2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */,
 				2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */,
