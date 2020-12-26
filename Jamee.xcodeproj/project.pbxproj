@@ -15,6 +15,7 @@
 		2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FFA25985C1B003CF7AF /* Deal.swift */; };
 		2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7C625987B610075D926 /* StoreTableViewController.swift */; };
 		2D9AB7CE2598892F0075D926 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7CD2598892F0075D926 /* OrderViewController.swift */; };
+		2D9AB7D12598D54E0075D926 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7D02598D54E0075D926 /* Menu.swift */; };
 		2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457C25960B7C005F3BBF /* AppDelegate.swift */; };
 		2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */; };
 		2DCA458425960B7C005F3BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458225960B7C005F3BBF /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 		2D8B8FFA25985C1B003CF7AF /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		2D9AB7C625987B610075D926 /* StoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		2D9AB7CD2598892F0075D926 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		2D9AB7D02598D54E0075D926 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		2DCA457925960B7C005F3BBF /* Jamee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jamee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCA457C25960B7C005F3BBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				2D8B8FFA25985C1B003CF7AF /* Deal.swift */,
+				2D9AB7D02598D54E0075D926 /* Menu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */,
 				5CD986D82597B1490006D47B /* MyVoucherViewController.swift in Sources */,
 				2D8B8FF325985644003CF7AF /* Extension.swift in Sources */,
+				2D9AB7D12598D54E0075D926 /* Menu.swift in Sources */,
 				2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */,
 				2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */,
 				2D4D9A802597A9AB005F51AF /* Color.swift in Sources */,

@@ -21,7 +21,7 @@ class ListDealCell : UITableViewCell{
     @IBOutlet weak var addressLabel: UILabel!
 }
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
    
     @IBOutlet weak var avatarImage: UIImageView!
@@ -36,7 +36,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var screenWidth: CGFloat!
     var screenSize: CGRect!
     var listBannerImage = [BundleImageSource(imageString: "slider1"), BundleImageSource(imageString: "slider2"), BundleImageSource(imageString: "slider3"), BundleImageSource(imageString: "slider4")]
-
+    var menu = ["Cơm","Bánh","Trà sữa","Cà phê","Gà rán", "Pizza"]
     let listDealSuggest = listDeal()
     @IBOutlet weak var DealTableView: UITableView!
     
@@ -59,7 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func setElement(){
-    
+     //   contentScrollView.backgroundColor = UIColor.grayCustom()
         headerView.backgroundColor = UIColor.pinkBackground()
         avatarImage.layer.borderWidth = 1
         avatarImage.layer.masksToBounds = false
@@ -91,19 +91,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listDealSuggest.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! categoryCell
-     
-        cell.iconImage.image = UIImage(named: "avatar")
-        cell.titleLabel.text = "label \(indexPath.row)"
-        cell.frame.size.width = screenWidth / 100
-        cell.frame.size.height = screenWidth / 10
-        return cell
-    }
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listDealSuggest.count
     }
@@ -112,7 +100,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListDealCell", for: indexPath) as! ListDealCell
         print(indexPath.row)
         let currentDeal = listDealSuggest[indexPath.row]
-        cell.logoImage.image = UIImage(named: currentDeal.logo)
+        //cell.logoImage.image = UIImage(named: currentDeal.logo)
         cell.titleLabel.text = currentDeal.title
         cell.subtitleLabel.text = currentDeal.subtitle
         cell.addressLabel.text = currentDeal.address
@@ -128,11 +116,29 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
 extension HomeViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow:CGFloat = 4
+        let itemsPerRow:CGFloat = 6
         let hardCodedPadding:CGFloat = 5
         let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
         let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
         return CGSize(width: itemWidth, height: itemHeight)
     }
 
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return menu.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! categoryCell
+        cell.iconImage.image = UIImage(systemName: "app.gift")
+        cell.iconImage.sizeToFit()
+     // cell.iconImage.image = UIImage(named: "rice")
+    //    cell.iconImage.image.
+        cell.titleLabel.text = menu[indexPath.row]
+        return cell
+    }
+    
+    
 }

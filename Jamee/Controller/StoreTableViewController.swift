@@ -15,14 +15,30 @@ class StoreCell: UITableViewCell{
 }
 
 class StoreTableViewController: UITableViewController {
-
+//    var listMenu = [Menu]()
+    var index = Int()
+    @IBOutlet weak var buyButton: UIButton!
+    var list = listMenu()
+    var numOfItem: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = true
+    }
+    
+    func setView(){
+        if (numOfItem == 0){
+            buyButton.isHidden = true
+        }
+        else {
+            buyButton.setTitle("Giỏ hàng: \(numOfItem) món ", for: .normal)
+            buyButton.backgroundColor = UIColor.pinkBackground()
+            buyButton.tintColor = .white
+        }
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,20 +48,25 @@ class StoreTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return list.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath)
-
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreCell
+        cell.nameLabel.text = list[indexPath.row].name
+        cell.priceLabel.text = list[indexPath.row].price
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        index = indexPath.row
+    }
 
     @IBAction func addTapped(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "OrderViewController") as! OrderViewController
+        print("index")
+        vc.name = list[index].name
+        vc.price = list[index].price
         navigationController?.pushViewController(vc, animated: true)
     }
     
