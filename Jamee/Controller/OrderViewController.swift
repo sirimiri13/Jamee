@@ -12,6 +12,10 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var plusButoon: UIButton!
     @IBOutlet weak var numberLabel: UILabel!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var priceLabel: UILabel!
+    
     @IBOutlet weak var sizeMButton: UIButton!
     @IBOutlet weak var sizeLButton: UIButton!
     
@@ -24,7 +28,16 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var sugar30Button: UIButton!
     @IBOutlet weak var sugar50Button: UIButton!
     @IBOutlet weak var sugar70Button: UIButton!
-    var number = 1;
+    @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var headerView: UIView!
+    
+    @IBOutlet weak var addButton: UIButton!
+    
+    var number = 1
+    var item : Menu? = nil
+    var name: String = ""
+    var price: String = ""
+    var image: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -35,6 +48,12 @@ class OrderViewController: UIViewController {
         sizeMButton.isSelected = true
         sugar100Button.isSelected = true
         time1Button.isSelected = true
+        noteTextView.layer.borderWidth = 1
+        headerView.backgroundColor = UIColor.grayCustom()
+        addButton.backgroundColor = UIColor.pinkBackground()
+        addButton.tintColor = UIColor.white
+        nameLabel.text = name
+        priceLabel.text = price
     }
     @IBAction func minusTapped(_ sender: Any) {
         if number > 1 {
@@ -202,7 +221,10 @@ class OrderViewController: UIViewController {
    
 
     @IBAction func addTapped(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "StoreTableViewController") as! StoreTableViewController
+        vc.numOfItem = number
         navigationController?.popViewController(animated: true)
+        
     }
     
 }

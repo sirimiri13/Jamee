@@ -12,4 +12,7 @@ extension UIColor{
     static func pinkBackground() -> UIColor {
         return UIColor(red: 252/255, green: 102/255, blue: 255/255, alpha: 1)
     }
+    static func grayCustom() -> UIColor {
+        return UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1)
+    }
 }
