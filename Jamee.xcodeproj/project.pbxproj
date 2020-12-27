@@ -3,27 +3,43 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FCD1EB4E950939B5ECF2746 /* Pods_Jamee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C205509776E642643444D66 /* Pods_Jamee.framework */; };
+		2D4D9A762597A589005F51AF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D9A752597A589005F51AF /* TabBarViewController.swift */; };
+		2D4D9A802597A9AB005F51AF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D9A7F2597A9AB005F51AF /* Color.swift */; };
+		2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D9A872597ADE9005F51AF /* HomeViewController.swift */; };
+		2D8B8FF325985644003CF7AF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FF225985644003CF7AF /* Extension.swift */; };
+		2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FFA25985C1B003CF7AF /* Deal.swift */; };
+		2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7C625987B610075D926 /* StoreTableViewController.swift */; };
+		2D9AB7CE2598892F0075D926 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7CD2598892F0075D926 /* OrderViewController.swift */; };
 		2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457C25960B7C005F3BBF /* AppDelegate.swift */; };
 		2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */; };
-		2DCA458125960B7C005F3BBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA458025960B7C005F3BBF /* ViewController.swift */; };
 		2DCA458425960B7C005F3BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458225960B7C005F3BBF /* Main.storyboard */; };
 		2DCA458625960B7D005F3BBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458525960B7D005F3BBF /* Assets.xcassets */; };
 		2DCA458925960B7D005F3BBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458725960B7D005F3BBF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D4D9A752597A589005F51AF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2D4D9A7F2597A9AB005F51AF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		2D4D9A872597ADE9005F51AF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2D8B8FF225985644003CF7AF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		2D8B8FFA25985C1B003CF7AF /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		2D9AB7C625987B610075D926 /* StoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
+		2D9AB7CD2598892F0075D926 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		2DCA457925960B7C005F3BBF /* Jamee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jamee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCA457C25960B7C005F3BBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2DCA458025960B7C005F3BBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2DCA458325960B7C005F3BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DCA458525960B7D005F3BBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DCA458825960B7D005F3BBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DCA458A25960B7D005F3BBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C205509776E642643444D66 /* Pods_Jamee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jamee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDCCCD9CAE015F671D99810D /* Pods-Jamee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jamee.debug.xcconfig"; path = "Target Support Files/Pods-Jamee/Pods-Jamee.debug.xcconfig"; sourceTree = "<group>"; };
+		EF052B9F848C0C3D9F2C08CC /* Pods-Jamee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jamee.release.xcconfig"; path = "Target Support Files/Pods-Jamee/Pods-Jamee.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCD1EB4E950939B5ECF2746 /* Pods_Jamee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D4D9A782597A598005F51AF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D4D9A752597A589005F51AF /* TabBarViewController.swift */,
+				2D4D9A872597ADE9005F51AF /* HomeViewController.swift */,
+				2D9AB7C625987B610075D926 /* StoreTableViewController.swift */,
+				2D9AB7CD2598892F0075D926 /* OrderViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D4D9A7E2597A968005F51AF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2D4D9A7F2597A9AB005F51AF /* Color.swift */,
+				2D8B8FF225985644003CF7AF /* Extension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		2D8B8FF525985AF3003CF7AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D8B8FFA25985C1B003CF7AF /* Deal.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2DCA457025960B7C005F3BBF = {
 			isa = PBXGroup;
 			children = (
 				2DCA457B25960B7C005F3BBF /* Jamee */,
 				2DCA457A25960B7C005F3BBF /* Products */,
+				D891938CAB193B721B24C71C /* Pods */,
+				3D1D4976E57BEDDD0C48B4A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +103,34 @@
 		2DCA457B25960B7C005F3BBF /* Jamee */ = {
 			isa = PBXGroup;
 			children = (
+				2D8B8FF525985AF3003CF7AF /* Model */,
+				2D4D9A7E2597A968005F51AF /* Utilities */,
+				2D4D9A782597A598005F51AF /* Controller */,
 				2DCA457C25960B7C005F3BBF /* AppDelegate.swift */,
 				2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */,
-				2DCA458025960B7C005F3BBF /* ViewController.swift */,
 				2DCA458225960B7C005F3BBF /* Main.storyboard */,
 				2DCA458525960B7D005F3BBF /* Assets.xcassets */,
 				2DCA458725960B7D005F3BBF /* LaunchScreen.storyboard */,
 				2DCA458A25960B7D005F3BBF /* Info.plist */,
 			);
 			path = Jamee;
+			sourceTree = "<group>";
+		};
+		3D1D4976E57BEDDD0C48B4A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C205509776E642643444D66 /* Pods_Jamee.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D891938CAB193B721B24C71C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDCCCD9CAE015F671D99810D /* Pods-Jamee.debug.xcconfig */,
+				EF052B9F848C0C3D9F2C08CC /* Pods-Jamee.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2DCA458D25960B7D005F3BBF /* Build configuration list for PBXNativeTarget "Jamee" */;
 			buildPhases = (
+				A59BBEF521CA79A40579E6A7 /* [CP] Check Pods Manifest.lock */,
 				2DCA457525960B7C005F3BBF /* Sources */,
 				2DCA457625960B7C005F3BBF /* Frameworks */,
 				2DCA457725960B7C005F3BBF /* Resources */,
+				00B7F7EB3192D5DB76E7AD47 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,14 +200,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00B7F7EB3192D5DB76E7AD47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jamee/Pods-Jamee-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jamee/Pods-Jamee-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jamee/Pods-Jamee-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A59BBEF521CA79A40579E6A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jamee-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2DCA457525960B7C005F3BBF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCA458125960B7C005F3BBF /* ViewController.swift in Sources */,
+				2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */,
+				2D4D9A762597A589005F51AF /* TabBarViewController.swift in Sources */,
 				2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */,
+				2D8B8FF325985644003CF7AF /* Extension.swift in Sources */,
 				2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */,
+				2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */,
+				2D4D9A802597A9AB005F51AF /* Color.swift in Sources */,
+				2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */,
+				2D9AB7CE2598892F0075D926 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +399,7 @@
 		};
 		2DCA458E25960B7D005F3BBF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDCCCD9CAE015F671D99810D /* Pods-Jamee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +419,7 @@
 		};
 		2DCA458F25960B7D005F3BBF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF052B9F848C0C3D9F2C08CC /* Pods-Jamee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
