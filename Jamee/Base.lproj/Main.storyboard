@@ -374,7 +374,7 @@
                             <state key="normal" title="Button"/>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoreCell" rowHeight="88" id="ZGV-Bg-d9d" customClass="StoreCell" customModule="Jamee" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StoreCell" rowHeight="88" id="ZGV-Bg-d9d" customClass="StoreCell" customModule="Jamee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="88"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZGV-Bg-d9d" id="KNV-mm-BOL">
@@ -409,7 +409,7 @@
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-1J-RIs">
                                             <rect key="frame" x="377" y="33" width="30" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button" image="plus" catalog="system"/>
+                                            <state key="normal" image="plus" catalog="system"/>
                                             <connections>
                                                 <action selector="addTapped:" destination="awi-Ae-qOV" eventType="touchUpInside" id="l6K-U7-4bL"/>
                                             </connections>
