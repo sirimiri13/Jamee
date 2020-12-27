@@ -28,6 +28,9 @@ class StoreTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.topItem?.title = "MENU"
+        navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     func setView(){

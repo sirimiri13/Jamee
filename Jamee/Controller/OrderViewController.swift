@@ -42,7 +42,10 @@ class OrderViewController: UIViewController {
         super.viewDidLoad()
         setView()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
+        navigationController?.navigationBar.tintColor = UIColor.white
+    }
     func setView(){
         numberLabel.text = "\(number)"
         sizeMButton.isSelected = true
