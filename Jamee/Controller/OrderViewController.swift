@@ -94,10 +94,10 @@ class OrderViewController: UIViewController {
     @IBAction func sugar100Tapped(_ sender: Any) {
         if sugar100Button.isSelected
         {
-            sugar100Button.isSelected = false
-            sugar70Button.isSelected = true
-            sugar50Button.isSelected = true
-            sugar30Button.isSelected = true
+            sugar100Button.isSelected = true
+            sugar70Button.isSelected = false
+            sugar50Button.isSelected = false
+            sugar30Button.isSelected = false
         }
         else
         {
@@ -110,10 +110,10 @@ class OrderViewController: UIViewController {
     @IBAction func sugar70Tapped(_ sender: Any) {
         if sugar70Button.isSelected
         {
-            sugar100Button.isSelected = true
-            sugar70Button.isSelected = false
-            sugar50Button.isSelected = true
-            sugar30Button.isSelected = true
+            sugar100Button.isSelected = false
+            sugar70Button.isSelected = true
+            sugar50Button.isSelected = false
+            sugar30Button.isSelected = false
         }
         else
         {
@@ -126,10 +126,10 @@ class OrderViewController: UIViewController {
     @IBAction func sugar50Tapped(_ sender: Any) {
         if sugar50Button.isSelected
         {
-            sugar100Button.isSelected = true
-            sugar70Button.isSelected = true
-            sugar50Button.isSelected = false
-            sugar30Button.isSelected = true
+            sugar100Button.isSelected = false
+            sugar70Button.isSelected = false
+            sugar50Button.isSelected = true
+            sugar30Button.isSelected = false
         }
         else
         {
@@ -142,10 +142,10 @@ class OrderViewController: UIViewController {
     @IBAction func sugar30Tapped(_ sender: Any) {
         if sugar30Button.isSelected
         {
-            sugar100Button.isSelected = true
-            sugar70Button.isSelected = true
-            sugar50Button.isSelected = true
-            sugar30Button.isSelected = false
+            sugar100Button.isSelected = false
+            sugar70Button.isSelected = false
+            sugar50Button.isSelected = false
+            sugar30Button.isSelected = true
         }
         else
         {
@@ -159,10 +159,10 @@ class OrderViewController: UIViewController {
      @IBAction func Time1(_ sender: Any) {
         if time1Button.isSelected
         {
-            time1Button.isSelected = false
-            time2Button.isSelected = true
-            time3Button.isSelected = true
-            time4Button.isSelected = true
+            time1Button.isSelected = true
+            time2Button.isSelected = false
+            time3Button.isSelected = false
+            time4Button.isSelected = false
         }
         else
         {
@@ -176,10 +176,10 @@ class OrderViewController: UIViewController {
     @IBAction func Time2(_ sender: Any) {
         if time2Button.isSelected
         {
-            time1Button.isSelected = true
-            time2Button.isSelected = false
-            time3Button.isSelected = true
-            time4Button.isSelected = true
+            time1Button.isSelected = false
+            time2Button.isSelected = true
+            time3Button.isSelected = false
+            time4Button.isSelected = false
         }
         else
         {
@@ -192,10 +192,10 @@ class OrderViewController: UIViewController {
     @IBAction func Time3(_ sender: Any) {
         if time3Button.isSelected
         {
-            time1Button.isSelected = true
-            time2Button.isSelected = true
-            time3Button.isSelected = false
-            time4Button.isSelected = true
+            time1Button.isSelected = false
+            time2Button.isSelected = false
+            time3Button.isSelected = true
+            time4Button.isSelected = false
         }
         else
         {
@@ -208,10 +208,10 @@ class OrderViewController: UIViewController {
     @IBAction func Time4(_ sender: Any) {
         if time4Button.isSelected
         {
-            time1Button.isSelected = true
-            time2Button.isSelected = true
-            time3Button.isSelected = true
-            time4Button.isSelected = false
+            time1Button.isSelected = false
+            time2Button.isSelected = false
+            time3Button.isSelected = false
+            time4Button.isSelected = true
         }
         else
         {
