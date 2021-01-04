@@ -10,14 +10,7 @@ import UIKit
 
 
 var isHiden: Bool = false
-class Voucher {
-    init(name:String,date:String) {
-        self.name = name;
-        self.date = date;
-    };
-    let name:String;
-    let date:String;
-}
+
 class tableCell: UITableViewCell{
     @IBOutlet weak var VoucherImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -109,6 +102,7 @@ class MyVoucherViewController: UIViewController,UITableViewDelegate,UITableViewD
         }
         else {
             cell.CollectButton.isHidden = false
+            cell.CollectButton.setTitle("Collect", for: .normal)
         }
         
         cell.CollectButton.tintColor = UIColor.pinkBackground()

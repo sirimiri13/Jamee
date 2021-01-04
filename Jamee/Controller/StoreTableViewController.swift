@@ -7,6 +7,9 @@
 
 import UIKit
 
+
+//var picked : Bool = true
+
 class StoreCell: UITableViewCell{
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -23,6 +26,7 @@ class StoreTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        viewWillAppear(true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,14 +38,7 @@ class StoreTableViewController: UITableViewController {
     }
     
     func setView(){
-        if (numOfItem == 0){
-            buyButton.isHidden = true
-        }
-        else {
-            buyButton.setTitle("Giỏ hàng: \(numOfItem) món ", for: .normal)
-            buyButton.backgroundColor = UIColor.pinkBackground()
-            buyButton.tintColor = .white
-        }
+       
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

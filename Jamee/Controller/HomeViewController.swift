@@ -82,11 +82,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         bannerSlider.pageIndicator = pageControl
         bannerSlider.activityIndicator = DefaultActivityIndicator()
         bannerSlider.setImageInputs(listBannerImage)
-        
         seeAllButton.underline()
-        
         DealTableView.isScrollEnabled = false
-       
         DealTableView.reloadData()
         
     }
@@ -100,7 +97,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListDealCell", for: indexPath) as! ListDealCell
         print(indexPath.row)
         let currentDeal = listDealSuggest[indexPath.row]
-        //cell.logoImage.image = UIImage(named: currentDeal.logo)
+        cell.logoImage.image = UIImage(named: currentDeal.logo)
         cell.titleLabel.text = currentDeal.title
         cell.subtitleLabel.text = currentDeal.subtitle
         cell.addressLabel.text = currentDeal.address
@@ -110,6 +107,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = storyboard?.instantiateViewController(identifier: "StoreTableViewController") as! StoreTableViewController
         navigationController?.pushViewController(nextVC, animated: true)
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
    
 }

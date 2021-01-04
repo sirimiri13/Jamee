@@ -38,9 +38,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Khuyen Mai">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Khuyến Mãi"/>
                                 <connections>
                                     <action selector="ListVoucherAction:" destination="kbd-7m-4AN" eventType="touchUpInside" id="8Ca-xw-omN"/>
                                 </connections>
@@ -50,9 +48,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Ma cua toi">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                                <state key="normal" title="Mã Của Tôi"/>
                                 <connections>
                                     <action selector="MyVoucherAction:" destination="kbd-7m-4AN" eventType="touchUpInside" id="MUl-PQ-yVZ"/>
                                 </connections>
@@ -474,11 +470,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3oB-tW-fN7">
-                            <rect key="frame" x="0.0" y="144" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                        </button>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="StoreCell" rowHeight="88" id="ZGV-Bg-d9d" customClass="StoreCell" customModule="Jamee" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="88"/>
@@ -545,9 +536,6 @@
                             <outlet property="delegate" destination="awi-Ae-qOV" id="tWw-mW-X5f"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <outlet property="buyButton" destination="3oB-tW-fN7" id="xRZ-Au-wPH"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Df-ie-UxI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -34,7 +34,7 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var number = 1
-    var item : Menu? = nil
+    var item : Item? = nil
     var name: String = ""
     var price: String = ""
     var image: String = ""
