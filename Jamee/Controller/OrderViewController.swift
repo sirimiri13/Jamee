@@ -12,6 +12,7 @@ var time: String = "9h00 - 10h00"
 var ItemPicked = [Item]()
 class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
    
+    @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButoon: UIButton!
     @IBOutlet weak var numberLabel: UILabel!
@@ -67,6 +68,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         addButton.layer.cornerRadius = 7
         nameLabel.text = name
         priceLabel.text = price
+        itemImage.image = UIImage(named: item!.image)
     }
     @IBAction func minusTapped(_ sender: Any) {
         if number > 1 {

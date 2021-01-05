@@ -35,7 +35,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var screenWidth: CGFloat!
     var screenSize: CGRect!
-    var listBannerImage = [BundleImageSource(imageString: "slider1"), BundleImageSource(imageString: "slider2"), BundleImageSource(imageString: "slider3"), BundleImageSource(imageString: "slider4")]
+    var listBannerImage = [BundleImageSource(imageString: "pizza"), BundleImageSource(imageString: "tch"), BundleImageSource(imageString: "passio")]
     var menu = ["Cơm","Bánh","Trà sữa","Cà phê","Gà rán", "Pizza"]
     let listDealSuggest = listDeal()
     @IBOutlet weak var DealTableView: UITableView!

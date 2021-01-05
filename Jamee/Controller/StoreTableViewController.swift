@@ -86,7 +86,12 @@ class StoreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreCell
         cell.nameLabel.text = list[indexPath.row].name
         cell.priceLabel.text = list[indexPath.row].price
+        cell.logoImage.image = UIImage(named: list[indexPath.row].image)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        120
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         index = indexPath.row

@@ -67,7 +67,7 @@ class ConfirmOrderViewController: UIViewController {
             numberLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
         let imageItem = UIImageView()
-        imageItem.image = UIImage(named: "tocotoco")
+        imageItem.image = UIImage(named: ItemPicked[0].image)
         imageItem.translatesAutoresizingMaskIntoConstraints = false
         viewItem.addSubview(imageItem)
         NSLayoutConstraint.activate([

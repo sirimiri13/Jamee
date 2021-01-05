@@ -880,6 +880,7 @@
                         <outlet property="addButton" destination="7Ds-Ns-Of2" id="hq5-F8-SV4"/>
                         <outlet property="addressTextField" destination="IAH-Ry-Zq1" id="Y62-xu-oj9"/>
                         <outlet property="headerView" destination="byf-r8-vtw" id="dt6-cd-ZMx"/>
+                        <outlet property="itemImage" destination="Yqt-o2-XLg" id="Z77-bV-qyy"/>
                         <outlet property="minusButton" destination="lM9-za-TIf" id="ba2-GW-RaV"/>
                         <outlet property="nameLabel" destination="h18-xN-Xo1" id="O06-Kk-QrT"/>
                         <outlet property="noteTextView" destination="vt5-I3-bhz" id="wqp-cm-5aV"/>
