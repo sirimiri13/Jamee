@@ -7,7 +7,10 @@
 
 import UIKit
 
-class OrderViewController: UIViewController {
+var addressPicker : String = ""
+var ItemPicked = [Item]()
+class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
+   
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButoon: UIButton!
     @IBOutlet weak var numberLabel: UILabel!
@@ -32,15 +35,20 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addressTextField: UITextField!
     
     var number = 1
     var item : Item? = nil
     var name: String = ""
     var price: String = ""
     var image: String = ""
+    
+    let addresses = ["Nguyễn Tri Phương","Sư vạn hạnh","Nguyễn Văn Cừ", "Nguyễn Thị Minh Khai"]
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        createPickerAddress()
+        dismissPickerView()
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
@@ -224,10 +232,49 @@ class OrderViewController: UIViewController {
    
 
     @IBAction func addTapped(_ sender: Any) {
-        let vc = storyboard?.instantiateViewController(identifier: "StoreTableViewController") as! StoreTableViewController
-        vc.numOfItem = number
+        ItemPicked.append(item!)
+        picked = true
+        let number = NumberFormatter().number(from: numberLabel.text!)
+        numOfItem = number!.intValue
+        let priceItem = NumberFormatter().number(from: priceLabel.text!)
+        let priceInt = priceItem?.doubleValue
+        totalPrice = Double(numOfItem) * priceInt!
         navigationController?.popViewController(animated: true)
-        
+        print(ItemPicked)
     }
     
+    
+    func createPickerAddress(){
+        let picker = UIPickerView()
+        picker.delegate = self
+        addressTextField.inputView = picker
+        
+    }
+    func dismissPickerView() {
+       let toolBar = UIToolbar()
+       toolBar.sizeToFit()
+        let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.action))
+        toolBar.setItems([button], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        addressTextField.inputAccessoryView = toolBar
+    }
+    @objc func action() {
+          view.endEditing(true)
+    }
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return addresses.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return addresses[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    addressPicker = addresses[row]
+    addressTextField.text = addressPicker
+    }
 }

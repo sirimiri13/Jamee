@@ -8,8 +8,10 @@
 import UIKit
 
 
-//var picked : Bool = true
-
+var itemPicked = [Item]()
+var picked : Bool = false
+var numOfItem : Int = 0
+var totalPrice : Double = 0.000
 class StoreCell: UITableViewCell{
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -22,11 +24,9 @@ class StoreTableViewController: UITableViewController {
     var index = Int()
     @IBOutlet weak var buyButton: UIButton!
     var list = listMenu()
-    var numOfItem: Int = 0
+   
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
-        viewWillAppear(true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,9 +35,40 @@ class StoreTableViewController: UITableViewController {
         navigationController?.navigationBar.topItem?.title = "MENU"
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
         navigationController?.navigationBar.tintColor = UIColor.white
+       // tableView.sizeToFit()
+        setView()
     }
     
     func setView(){
+        if (picked == true){
+            let footerView = UIView()
+            footerView.backgroundColor = UIColor.pinkBackground()
+            footerView.tintColor = .white
+            footerView.layer.cornerRadius = 10
+            view.addSubview(footerView)
+            footerView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: view.bounds.maxY - 30),
+                footerView.leftAnchor.constraint(equalTo:view.leftAnchor,constant: 10 ),
+                footerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: view.bounds.maxX - 10),
+                footerView.heightAnchor.constraint(equalToConstant: 50)
+            ])
+            
+            let contentLabel = UILabel()
+            contentLabel.text = "Giỏ hàng: \t\t \(numOfItem) món hàng \t\t \(String(format:" %.3f", totalPrice)) đồng"
+            contentLabel.textColor = UIColor.white
+            footerView.addSubview(contentLabel)
+            contentLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            NSLayoutConstraint.activate([
+                contentLabel.topAnchor.constraint(equalTo: footerView.topAnchor,constant: 15),
+                contentLabel.leftAnchor.constraint(equalTo:footerView.leftAnchor,constant: 20 ),
+                contentLabel.rightAnchor.constraint(equalTo: footerView.rightAnchor, constant: 10),
+            ])
+            footerView.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action: #selector(confirmOrder(_:)))
+            footerView.addGestureRecognizer(tap)
+        }
        
     }
 
@@ -50,7 +81,6 @@ class StoreTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return list.count
     }
-
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreCell
@@ -65,9 +95,16 @@ class StoreTableViewController: UITableViewController {
     @IBAction func addTapped(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(identifier: "OrderViewController") as! OrderViewController
         print("index")
+        vc.item = list[index]
         vc.name = list[index].name
         vc.price = list[index].price
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    @objc func confirmOrder(_ sender: UITapGestureRecognizer){
+        print("tap")
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ConfirmOrderViewController") as! ConfirmOrderViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

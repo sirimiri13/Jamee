@@ -134,8 +134,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! categoryCell
         cell.iconImage.image = UIImage(systemName: "app.gift")
         cell.iconImage.sizeToFit()
-     // cell.iconImage.image = UIImage(named: "rice")
-    //    cell.iconImage.image.
         cell.titleLabel.text = menu[indexPath.row]
         return cell
     }

@@ -878,6 +878,7 @@
                     <navigationItem key="navigationItem" id="Do4-ks-C9M"/>
                     <connections>
                         <outlet property="addButton" destination="7Ds-Ns-Of2" id="hq5-F8-SV4"/>
+                        <outlet property="addressTextField" destination="IAH-Ry-Zq1" id="Y62-xu-oj9"/>
                         <outlet property="headerView" destination="byf-r8-vtw" id="dt6-cd-ZMx"/>
                         <outlet property="minusButton" destination="lM9-za-TIf" id="ba2-GW-RaV"/>
                         <outlet property="nameLabel" destination="h18-xN-Xo1" id="O06-Kk-QrT"/>
@@ -899,7 +900,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecv-L6-d47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2378.2608695652175" y="-161.38392857142856"/>
+            <point key="canvasLocation" x="-2662" y="-200"/>
+        </scene>
+        <!--Confirm Order View Controller-->
+        <scene sceneID="210-Z5-82q">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmOrderViewController" id="GP2-Xl-nNI" customClass="ConfirmOrderViewController" customModule="Jamee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wcR-rh-hag">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DkK-gU-gWz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78p-cX-6Mr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1588" y="-200"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Kc3-gq-UYY">
