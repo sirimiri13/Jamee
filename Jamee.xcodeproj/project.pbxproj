@@ -13,6 +13,7 @@
 		2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D9A872597ADE9005F51AF /* HomeViewController.swift */; };
 		2D8B8FF325985644003CF7AF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FF225985644003CF7AF /* Extension.swift */; };
 		2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FFA25985C1B003CF7AF /* Deal.swift */; };
+		2D9559A925A4A0280059FD33 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9559A825A4A0280059FD33 /* QRViewController.swift */; };
 		2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7C625987B610075D926 /* StoreTableViewController.swift */; };
 		2D9AB7CE2598892F0075D926 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7CD2598892F0075D926 /* OrderViewController.swift */; };
 		2D9AB7D12598D54E0075D926 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7D02598D54E0075D926 /* Item.swift */; };
@@ -32,6 +33,7 @@
 		2D4D9A872597ADE9005F51AF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2D8B8FF225985644003CF7AF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2D8B8FFA25985C1B003CF7AF /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
+		2D9559A825A4A0280059FD33 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		2D9AB7C625987B610075D926 /* StoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		2D9AB7CD2598892F0075D926 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		2D9AB7D02598D54E0075D926 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				2D9AB7CD2598892F0075D926 /* OrderViewController.swift */,
 				5CD986D72597B1490006D47B /* MyVoucherViewController.swift */,
 				2DA38DD925A35D6E0078F085 /* ConfirmOrderViewController.swift */,
+				2D9559A825A4A0280059FD33 /* QRViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				2DA38DD625A2D4930078F085 /* Voucher.swift in Sources */,
 				2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */,
 				2D4D9A762597A589005F51AF /* TabBarViewController.swift in Sources */,
+				2D9559A925A4A0280059FD33 /* QRViewController.swift in Sources */,
 				2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */,
 				5CD986D82597B1490006D47B /* MyVoucherViewController.swift in Sources */,
 				2D8B8FF325985644003CF7AF /* Extension.swift in Sources */,

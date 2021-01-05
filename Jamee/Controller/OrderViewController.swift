@@ -7,7 +7,8 @@
 
 import UIKit
 
-var addressPicker : String = ""
+var addressPicker : String = "Nguyễn Tri Phương"
+var time: String = "9h00 - 10h00"
 var ItemPicked = [Item]()
 class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
    
@@ -63,6 +64,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         headerView.backgroundColor = UIColor.grayCustom()
         addButton.backgroundColor = UIColor.pinkBackground()
         addButton.tintColor = UIColor.white
+        addButton.layer.cornerRadius = 7
         nameLabel.text = name
         priceLabel.text = price
     }
@@ -167,6 +169,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
      @IBAction func Time1(_ sender: Any) {
         if time1Button.isSelected
         {
+            time = "9h00 - 10h00"
             time1Button.isSelected = true
             time2Button.isSelected = false
             time3Button.isSelected = false
@@ -174,6 +177,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         }
         else
         {
+            time = "9h00 - 10h00"
             time1Button.isSelected = true
             time2Button.isSelected = false
             time3Button.isSelected = false
@@ -184,6 +188,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     @IBAction func Time2(_ sender: Any) {
         if time2Button.isSelected
         {
+            time = "10h00 - 11h00"
             time1Button.isSelected = false
             time2Button.isSelected = true
             time3Button.isSelected = false
@@ -191,6 +196,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         }
         else
         {
+            time = "10h00 - 11h00"
             time1Button.isSelected = false
             time2Button.isSelected = true
             time3Button.isSelected = false
@@ -200,6 +206,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     @IBAction func Time3(_ sender: Any) {
         if time3Button.isSelected
         {
+            time = "11h00 - 12h00"
             time1Button.isSelected = false
             time2Button.isSelected = false
             time3Button.isSelected = true
@@ -207,6 +214,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         }
         else
         {
+            time = "11h00 - 12h00"
             time1Button.isSelected = false
             time2Button.isSelected = false
             time3Button.isSelected = true
@@ -216,6 +224,8 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     @IBAction func Time4(_ sender: Any) {
         if time4Button.isSelected
         {
+            
+            time = "12h00 - 13h00"
             time1Button.isSelected = false
             time2Button.isSelected = false
             time3Button.isSelected = false
@@ -223,6 +233,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         }
         else
         {
+            time = "12h00 - 13h00"
             time1Button.isSelected = false
             time2Button.isSelected = false
             time3Button.isSelected = false
@@ -241,6 +252,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         totalPrice = Double(numOfItem) * priceInt!
         navigationController?.popViewController(animated: true)
         print(ItemPicked)
+        print(time)
     }
     
     
