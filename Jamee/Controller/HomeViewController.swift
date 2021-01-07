@@ -23,7 +23,51 @@ class ListDealCell : UITableViewCell{
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
-   
+    private enum itemMenu: String, CaseIterable{
+        case Rice
+        case Cookie
+        case BubbleTea
+        case Coffee
+        case Chicken
+        case Pizza
+        
+        var title: String  {
+            switch self {
+            case .Rice:
+                return "Cơm"
+            case .Cookie:
+                return "Bánh"
+            case .BubbleTea:
+                return "Trà Sữa"
+            case .Coffee:
+                return "Cà phê"
+            case .Chicken:
+                return "Gà rán"
+            case .Pizza:
+                return "Pizza"
+            }
+        }
+            
+        var imageItem: String {
+            switch self {
+            case .Rice:
+                return "rice"
+            case .Cookie:
+                return "cookie"
+            case .BubbleTea:
+                return "bubble-tea"
+            case .Coffee:
+                return "coffee-cup"
+            case .Chicken:
+                return "fried-chicken"
+            case .Pizza:
+                return "pizza-1"
+            }
+        }
+        
+    }
+    
+    
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var headerView: UIView!
@@ -31,12 +75,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var menuSlider: UICollectionView!
     @IBOutlet weak var seeAllButton: UIButton!
    
+    @IBOutlet weak var menuView: UIView!
     
     
     var screenWidth: CGFloat!
     var screenSize: CGRect!
     var listBannerImage = [BundleImageSource(imageString: "pizza"), BundleImageSource(imageString: "tch"), BundleImageSource(imageString: "passio")]
-    var menu = ["Cơm","Bánh","Trà sữa","Cà phê","Gà rán", "Pizza"]
     let listDealSuggest = listDeal()
     @IBOutlet weak var DealTableView: UITableView!
     
@@ -44,6 +88,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         print("item: \(listDealSuggest.count)")
         setElement()
+        setCollectionView()
         screenSize = UIScreen.main.bounds
         screenWidth = screenSize.width
         menuSlider.delegate = self
@@ -51,11 +96,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DealTableView.dataSource = self
         DealTableView.delegate = self
       
+      
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
+    }
+    
+    func setCollectionView(){
+       
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.itemSize = CGSize(width: menuView.frame.size.width/4, height: menuView.frame.size.height)
+        menuSlider.collectionViewLayout = layout
+        
     }
     
     func setElement(){
@@ -69,7 +125,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         nameLabel.text = "Chào, Hương!"
         nameLabel.textColor = .white
         nameLabel.font =  UIFont.systemFont(ofSize: 18, weight: .bold)
-        
+        menuView.backgroundColor = UIColor.clear
         
         // set banner
         bannerSlider.slideshowInterval = 3.0
@@ -114,27 +170,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
    
 }
 
-extension HomeViewController : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemsPerRow:CGFloat = 6
-        let hardCodedPadding:CGFloat = 5
-        let itemWidth = (collectionView.bounds.width / itemsPerRow) - hardCodedPadding
-        let itemHeight = collectionView.bounds.height - (2 * hardCodedPadding)
-        return CGSize(width: itemWidth, height: itemHeight)
-    }
-
-}
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menu.count
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! categoryCell
-        cell.iconImage.image = UIImage(systemName: "app.gift")
-        cell.iconImage.sizeToFit()
-        cell.titleLabel.text = menu[indexPath.row]
+        
+        let item = itemMenu.allCases[indexPath.row]
+        cell.iconImage.image = UIImage(named: item.imageItem)?.withTintColor(UIColor.pinkBackground())
+        cell.titleLabel.text = item.title
         return cell
     }
     
