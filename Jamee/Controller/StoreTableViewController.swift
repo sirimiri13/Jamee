@@ -20,8 +20,7 @@ class StoreCell: UITableViewCell{
 }
 
 class StoreTableViewController: UITableViewController {
-//    var listMenu = [Menu]()
-    var index = Int()
+
     @IBOutlet weak var buyButton: UIButton!
     var list = listMenu()
    
@@ -87,23 +86,25 @@ class StoreTableViewController: UITableViewController {
         cell.nameLabel.text = list[indexPath.row].name
         cell.priceLabel.text = list[indexPath.row].price
         cell.logoImage.image = UIImage(named: list[indexPath.row].image)
+        let addButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        addButton.setImage(UIImage(systemName: "plus")?.withTintColor(UIColor.pinkBackground()), for: .normal)
+        addButton.tag = indexPath.row
+        cell.accessoryView = addButton
+        addButton.addTarget(self, action: #selector(addTap(_:)), for: .touchUpInside)
+        
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        index = indexPath.row
-    }
-
-    @IBAction func addTapped(_ sender: Any) {
+    @objc func addTap(_ sender: UIButton){
         let vc = storyboard?.instantiateViewController(identifier: "OrderViewController") as! OrderViewController
-        print("index")
+        let index = sender.tag
         vc.item = list[index]
         vc.name = list[index].name
         vc.price = list[index].price
         navigationController?.pushViewController(vc, animated: true)
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        120
     }
     
     

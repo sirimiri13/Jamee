@@ -182,6 +182,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let item = itemMenu.allCases[indexPath.row]
         cell.iconImage.image = UIImage(named: item.imageItem)?.withTintColor(UIColor.pinkBackground())
         cell.titleLabel.text = item.title
+        
         return cell
     }
     

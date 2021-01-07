@@ -502,14 +502,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-1J-RIs">
-                                            <rect key="frame" x="377" y="33" width="30" height="22"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="plus" catalog="system"/>
-                                            <connections>
-                                                <action selector="addTapped:" destination="awi-Ae-qOV" eventType="touchUpInside" id="l6K-U7-4bL"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="jK1-wL-Zuz" firstAttribute="leading" secondItem="KNV-mm-BOL" secondAttribute="leading" constant="5" id="26D-yC-7hA"/>
@@ -523,7 +515,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="addButoon" destination="40Y-1J-RIs" id="BMG-8V-gkG"/>
                                     <outlet property="logoImage" destination="jK1-wL-Zuz" id="923-Hx-egq"/>
                                     <outlet property="nameLabel" destination="A0C-Lo-enY" id="4Da-1W-yLC"/>
                                     <outlet property="priceLabel" destination="CD0-Z1-kwp" id="8mA-Ef-Ph1"/>
