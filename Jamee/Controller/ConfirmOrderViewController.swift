@@ -8,7 +8,8 @@
 import UIKit
 
 class ConfirmOrderViewController: UIViewController {
-
+    @IBOutlet weak var addressLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -19,7 +20,6 @@ class ConfirmOrderViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteCustom()
         let addressView = UIView()
         addressView.backgroundColor = UIColor.white
-        let addressLabel = UILabel()
         addressLabel.attributedText = NSMutableAttributedString().normal("Đơn bạn đặt tại ").bold(addressPicker)
         addressLabel.textColor = UIColor.black
         addressLabel.backgroundColor = .white
@@ -44,13 +44,12 @@ class ConfirmOrderViewController: UIViewController {
             addressView.rightAnchor.constraint(equalTo: view.rightAnchor),
             addressView.heightAnchor.constraint(equalToConstant: 45)
         ])
-        
         let viewItem = UIView()
         viewItem.backgroundColor = .white
         viewItem.layer.borderWidth = 1
         viewItem.layer.borderColor = UIColor.gray.cgColor
         let numberLabel = UILabel()
-        numberLabel.text = "\(numOfItem)"
+        numberLabel.text = "\(ItemPicked.count)"
         numberLabel.backgroundColor = UIColor.pinkBackground()
         numberLabel.layer.cornerRadius = 15
         numberLabel.textColor = .white
