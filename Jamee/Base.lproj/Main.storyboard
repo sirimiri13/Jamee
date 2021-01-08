@@ -708,27 +708,27 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chi nhánh:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhO-5K-jvA">
-                                                <rect key="frame" x="21" y="423" width="82" height="21"/>
+                                                <rect key="frame" x="21" y="438" width="82" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nguyễn Tri Phương" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IAH-Ry-Zq1">
-                                                <rect key="frame" x="15" y="452" width="384" height="34"/>
+                                                <rect key="frame" x="15" y="467" width="384" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ghi chú:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zF4-dd-xDF">
-                                                <rect key="frame" x="21" y="506" width="63" height="21"/>
+                                                <rect key="frame" x="21" y="521" width="63" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vt5-I3-bhz">
-                                                <rect key="frame" x="13" y="535" width="386" height="128"/>
+                                                <rect key="frame" x="13" y="550" width="386" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="textColor" systemColor="labelColor"/>
@@ -812,10 +812,10 @@
                                                     <action selector="Time2:" destination="8Sk-ie-CPb" eventType="touchUpInside" id="Q13-e5-bky"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MM9-XM-yt8">
-                                                <rect key="frame" x="18" y="379" width="138" height="22"/>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MM9-XM-yt8">
+                                                <rect key="frame" x="20" y="379" width="61" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="12h00 - 13h00" image="circle" catalog="system">
+                                                <state key="normal" title="Khác" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -845,6 +845,19 @@
                                                     <action selector="Time1:" destination="8Sk-ie-CPb" eventType="touchUpInside" id="ELT-Uq-qsL"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập khung giờ bạn muốn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gQs-lk-HGE">
+                                                <rect key="frame" x="112" y="373" width="269" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D04-cU-vVh">
+                                                <rect key="frame" x="112" y="420" width="270" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="700" id="k0o-3i-kpa"/>
@@ -907,11 +920,13 @@
                         <outlet property="time2Button" destination="gCu-hK-YmH" id="6Uo-Fy-YUG"/>
                         <outlet property="time3Button" destination="3P3-9M-sXh" id="w4N-x0-WAe"/>
                         <outlet property="time4Button" destination="MM9-XM-yt8" id="cHx-kN-q1m"/>
+                        <outlet property="timeEmptyLabel" destination="D04-cU-vVh" id="i4E-aU-tGh"/>
+                        <outlet property="timeTextField" destination="gQs-lk-HGE" id="I94-P7-Ym8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ecv-L6-d47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2662" y="-200"/>
+            <point key="canvasLocation" x="-2662.3188405797105" y="-200.22321428571428"/>
         </scene>
         <!--Confirm Order View Controller-->
         <scene sceneID="210-Z5-82q">

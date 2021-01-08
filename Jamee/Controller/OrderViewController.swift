@@ -28,6 +28,8 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     @IBOutlet weak var time2Button: UIButton!
     @IBOutlet weak var time3Button: UIButton!
     @IBOutlet weak var time4Button: UIButton!
+    @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var timeEmptyLabel: UILabel!
     
     @IBOutlet weak var sugar100Button: UIButton!
     @IBOutlet weak var sugar30Button: UIButton!
@@ -69,6 +71,8 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         nameLabel.text = name
         priceLabel.text = price
         itemImage.image = UIImage(named: item!.image)
+        timeEmptyLabel.alpha = 0
+        timeTextField.alpha = 0
     }
     @IBAction func minusTapped(_ sender: Any) {
         if number > 1 {
@@ -176,6 +180,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time2Button.isSelected = false
             time3Button.isSelected = false
             time4Button.isSelected = false
+            timeTextField.alpha = 0
         }
         else
         {
@@ -184,6 +189,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time2Button.isSelected = false
             time3Button.isSelected = false
             time4Button.isSelected = false
+            timeTextField.alpha = 0
         }
      }
     
@@ -195,6 +201,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time2Button.isSelected = true
             time3Button.isSelected = false
             time4Button.isSelected = false
+            timeTextField.alpha = 0
         }
         else
         {
@@ -203,6 +210,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time2Button.isSelected = true
             time3Button.isSelected = false
             time4Button.isSelected = false
+            timeTextField.alpha = 0
         }
     }
     @IBAction func Time3(_ sender: Any) {
@@ -213,6 +221,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time2Button.isSelected = false
             time3Button.isSelected = true
             time4Button.isSelected = false
+            timeTextField.alpha = 0
         }
         else
         {
@@ -221,21 +230,24 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time2Button.isSelected = false
             time3Button.isSelected = true
             time4Button.isSelected = false
+            timeTextField.alpha = 0
         }
     }
     @IBAction func Time4(_ sender: Any) {
         if time4Button.isSelected
         {
-            
-            time = "12h00 - 13h00"
+            timeTextField.alpha = 1
+            timeTextField.styleTextField(color: UIColor.pinkBackground())
+            time = timeTextField.text!
             time1Button.isSelected = false
             time2Button.isSelected = false
             time3Button.isSelected = false
             time4Button.isSelected = true
         }
-        else
-        {
-            time = "12h00 - 13h00"
+        else {
+            timeTextField.alpha = 1
+            time = timeTextField.text!
+            timeTextField.styleTextField(color: UIColor.pinkBackground())
             time1Button.isSelected = false
             time2Button.isSelected = false
             time3Button.isSelected = false
@@ -245,22 +257,37 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
    
 
     @IBAction func addTapped(_ sender: Any) {
-       
-       
         picked = true
         let number = NumberFormatter().number(from: numberLabel.text!)
-        for _ in 0..<number!.intValue{
-            ItemPicked.append(item!)
-            let priceItem = NumberFormatter().number(from: priceLabel.text!)
-            let priceInt = priceItem?.doubleValue
-            totalPrice += priceInt!
+       
+    
+        if (time4Button.isSelected){
+            if (timeTextField.text?.isEmpty == true){
+                timeEmptyLabel.alpha = 1
+                timeEmptyLabel.text = "Hãy nhập khung giờ bạn muốn"
+                timeEmptyLabel.textColor = UIColor.pinkBackground()
+            }
+            else {
+                for _ in 0..<number!.intValue{
+                    ItemPicked.append(item!)
+                    let priceItem = NumberFormatter().number(from: priceLabel.text!)
+                    let priceInt = priceItem?.doubleValue
+                    totalPrice += priceInt!
+                }
+                navigationController?.popViewController(animated: true)
+            }
         }
-     //   numOfItem = number!.intValue
+        else {
+            for _ in 0..<number!.intValue{
+                ItemPicked.append(item!)
+                let priceItem = NumberFormatter().number(from: priceLabel.text!)
+                let priceInt = priceItem?.doubleValue
+                totalPrice += priceInt!
+            }
+            navigationController?.popViewController(animated: true)
+
+        }
         
-    //    totalPrice = Double(Ite) * priceInt!
-        navigationController?.popViewController(animated: true)
-        print(ItemPicked)
-        print(time)
     }
     
     

@@ -19,9 +19,7 @@ class ConfirmOrderViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteCustom()
         let addressView = UIView()
         addressView.backgroundColor = UIColor.white
-        
         let addressLabel = UILabel()
-       
         addressLabel.attributedText = NSMutableAttributedString().normal("Đơn bạn đặt tại ").bold(addressPicker)
         addressLabel.textColor = UIColor.black
         addressLabel.backgroundColor = .white

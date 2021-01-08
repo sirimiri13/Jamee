@@ -97,3 +97,14 @@ extension String {
         return dateFormatter.date(from: self) as! Date
     }
 }
+
+extension UITextField{
+    func styleTextField(color: UIColor) {
+           let bottomLine = CALayer()
+           bottomLine.frame = CGRect(x: 0, y: self.frame.height - 2, width: self.frame.width, height: 2)
+           bottomLine.backgroundColor = color.cgColor
+           self.borderStyle = .none
+           self.layer.addSublayer(bottomLine)
+           
+       }
+}
