@@ -11,6 +11,7 @@
 		2D4D9A762597A589005F51AF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D9A752597A589005F51AF /* TabBarViewController.swift */; };
 		2D4D9A802597A9AB005F51AF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D9A7F2597A9AB005F51AF /* Color.swift */; };
 		2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D9A872597ADE9005F51AF /* HomeViewController.swift */; };
+		2D67D01F25A83AAE00EE4C54 /* ListQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D67D01E25A83AAE00EE4C54 /* ListQRViewController.swift */; };
 		2D8B8FF325985644003CF7AF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FF225985644003CF7AF /* Extension.swift */; };
 		2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FFA25985C1B003CF7AF /* Deal.swift */; };
 		2D9559A925A4A0280059FD33 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9559A825A4A0280059FD33 /* QRViewController.swift */; };
@@ -31,6 +32,7 @@
 		2D4D9A752597A589005F51AF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2D4D9A7F2597A9AB005F51AF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2D4D9A872597ADE9005F51AF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2D67D01E25A83AAE00EE4C54 /* ListQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListQRViewController.swift; sourceTree = "<group>"; };
 		2D8B8FF225985644003CF7AF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2D8B8FFA25985C1B003CF7AF /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		2D9559A825A4A0280059FD33 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				5CD986D72597B1490006D47B /* MyVoucherViewController.swift */,
 				2DA38DD925A35D6E0078F085 /* ConfirmOrderViewController.swift */,
 				2D9559A825A4A0280059FD33 /* QRViewController.swift */,
+				2D67D01E25A83AAE00EE4C54 /* ListQRViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				2DA38DD625A2D4930078F085 /* Voucher.swift in Sources */,
 				2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */,
+				2D67D01F25A83AAE00EE4C54 /* ListQRViewController.swift in Sources */,
 				2D4D9A762597A589005F51AF /* TabBarViewController.swift in Sources */,
 				2D9559A925A4A0280059FD33 /* QRViewController.swift in Sources */,
 				2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */,

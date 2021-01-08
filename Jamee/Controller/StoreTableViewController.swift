@@ -8,7 +8,7 @@
 import UIKit
 
 
-var itemPicked = [Item]()
+//var itemPicked = [Item]()
 var picked : Bool = false
 var numOfItem : Int = 0
 var totalPrice : Double = 0.000
@@ -16,7 +16,6 @@ class StoreCell: UITableViewCell{
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var addButoon: UIButton!
 }
 
 class StoreTableViewController: UITableViewController {
@@ -54,7 +53,7 @@ class StoreTableViewController: UITableViewController {
             ])
             
             let contentLabel = UILabel()
-            contentLabel.text = "Giỏ hàng: \t\t \(numOfItem) món hàng \t\t \(String(format:" %.3f", totalPrice)) đồng"
+            contentLabel.text = "Giỏ hàng: \t\t \(ItemPicked.count) món hàng \t\t \(String(format:" %.3f", totalPrice)) đồng"
             contentLabel.textColor = UIColor.white
             footerView.addSubview(contentLabel)
             contentLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -91,7 +90,6 @@ class StoreTableViewController: UITableViewController {
         addButton.tag = indexPath.row
         cell.accessoryView = addButton
         addButton.addTarget(self, action: #selector(addTap(_:)), for: .touchUpInside)
-        
         return cell
     }
     

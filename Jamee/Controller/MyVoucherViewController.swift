@@ -27,14 +27,7 @@ class MyVoucherViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     let color = UIColor.pinkBackground()
     var botBorder = UIView();
-    var listData:Array<Voucher> = [
-        Voucher(name:"Giam 30% cho hoa don 300k",date:"27/12/2020"),
-        Voucher(name:"Giam 30% cho hoa don 400k",date:"28/12/2020"),
-        Voucher(name:"Giam 15% cho hoa don 500k",date:"25/12/2020"),
-    ]
-    var listVoucherGot: Array<Voucher> = []
-    
-    
+    var listData = listVoucher()
     //--- Variable
    
     //--- Outlet
@@ -87,16 +80,25 @@ class MyVoucherViewController: UIViewController,UITableViewDelegate,UITableViewD
         ListVoucherButton.setTitleColor(.black, for: .normal)
         MyVoucherButton.setTitleColor(color, for: .normal)
         self.view.addSubview(botBorder)
-        listVoucherTableView.reloadData()
+       
         isHiden = true;
+        for idx in 0..<listData.count - 1{
+            print(listData[idx].date.toDate())
+            print(listData[idx+1].date.toDate())
+            if (listData[idx].date.toDate() > listData[idx+1].date.toDate()){
+                listData.swapAt(idx, idx+1)
+            }
+        }
+        listVoucherTableView.reloadData()
     }
     
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! tableCell
-        cell.nameLabel.text = listData[indexPath.row].name;
-        cell.dateLabel.text = listData[indexPath.row].date;
+        cell.nameLabel.text = listData[indexPath.row].voucherName;
+        cell.nameLabel.numberOfLines = 0
+        cell.dateLabel.text = "HSD: \(listData[indexPath.row].date)";
         if (isHiden == true){
             cell.CollectButton.isHidden = true
         }

@@ -45,7 +45,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     var price: String = ""
     var image: String = ""
     
-    let addresses = ["Nguyễn Tri Phương","Sư vạn hạnh","Nguyễn Văn Cừ", "Nguyễn Thị Minh Khai"]
+    let addresses = ["55 Nguyễn Tri Phương, Q5","312/2 Sư vạn hạnh, Q10","312 Nguyễn Văn Cừ, Q10", "12 Nguyễn Thị Minh Khai, Q1"]
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
@@ -245,13 +245,19 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
    
 
     @IBAction func addTapped(_ sender: Any) {
-        ItemPicked.append(item!)
+       
+       
         picked = true
         let number = NumberFormatter().number(from: numberLabel.text!)
-        numOfItem = number!.intValue
-        let priceItem = NumberFormatter().number(from: priceLabel.text!)
-        let priceInt = priceItem?.doubleValue
-        totalPrice = Double(numOfItem) * priceInt!
+        for _ in 0..<number!.intValue{
+            ItemPicked.append(item!)
+            let priceItem = NumberFormatter().number(from: priceLabel.text!)
+            let priceInt = priceItem?.doubleValue
+            totalPrice += priceInt!
+        }
+     //   numOfItem = number!.intValue
+        
+    //    totalPrice = Double(Ite) * priceInt!
         navigationController?.popViewController(animated: true)
         print(ItemPicked)
         print(time)
