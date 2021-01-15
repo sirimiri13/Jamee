@@ -7,5 +7,6 @@ target 'Jamee' do
 	
   # Pods for Jamee
 	pod 'ImageSlideshow', '~> 1.9.0'
+	pod 'SCLAlertView'
 
 end

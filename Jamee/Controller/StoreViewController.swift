@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 var picked : Bool = false
 var numOfItem : Int = 0
@@ -18,24 +19,47 @@ class StoreCell: UITableViewCell{
 
 class StoreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var list = listMenu()
-override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-       // setView()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.topItem?.title = "MENU"
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
         navigationController?.navigationBar.tintColor = UIColor.white
         setView()
-
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backView(_:)))
     }
     
+    @objc func backView(_ sender: UIButton){
+        if (ItemPicked.isEmpty == false){
+            let alertView = SCLAlertView()
+            alertView.addButton("Cancel", target: self, selector: #selector(cancelTapped(_:)))
+            alertView.addButton("OK") {
+                ItemPicked.removeAll()
+                totalPrice = 0.000
+                self.navigationController?.popViewController(animated: true)
+            }
+            alertView.showWarning("", subTitle: "Món hàng của bạn sẽ mất nếu thoát khỏi đây")
+        }
+        else {
+            navigationController?.popViewController(animated: true)
+        }
+        
+    }
+    
+    
+    @objc func cancelTapped(_ sender: UIButton){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     func setView(){
-        if (picked == true){
+        if (ItemPicked.isEmpty == false){
             let footerView = UIView()
             footerView.backgroundColor = UIColor.pinkBackground()
             footerView.tintColor = .white
@@ -48,7 +72,7 @@ override func viewDidLoad() {
                 footerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5),
                 footerView.heightAnchor.constraint(equalToConstant: 50)
             ])
-
+            
             
             let contentLabel = UILabel()
             contentLabel.text = "Giỏ hàng: \t\t \(ItemPicked.count) món hàng \t\t \(String(format:" %.3f", totalPrice)) đồng"
@@ -66,21 +90,21 @@ override func viewDidLoad() {
             let tap = UITapGestureRecognizer(target: self, action: #selector(confirmOrder(_:)))
             footerView.addGestureRecognizer(tap)
         }
-       
+        
     }
-
-
- func numberOfSections(in tableView: UITableView) -> Int {
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
- func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return list.count
     }
-
-func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreCell
         cell.nameLabel.text = list[indexPath.row].name
         cell.priceLabel.text = list[indexPath.row].price

@@ -2,17 +2,21 @@ PODS:
   - ImageSlideshow (1.9.2):
     - ImageSlideshow/Core (= 1.9.2)
   - ImageSlideshow/Core (1.9.2)
+  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - ImageSlideshow (~> 1.9.0)
+  - SCLAlertView
 
 SPEC REPOS:
   trunk:
     - ImageSlideshow
+    - SCLAlertView
 
 SPEC CHECKSUMS:
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 5870cc44836bcb369385ee7fb63f0af3b4950389
+PODFILE CHECKSUM: 2579c05996f379c15d1078867c097f16838e9eae
 
 COCOAPODS: 1.10.0
