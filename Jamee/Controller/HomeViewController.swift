@@ -95,7 +95,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         menuSlider.dataSource = self
         DealTableView.dataSource = self
         DealTableView.delegate = self
-      
+        ItemPicked.removeAll()
       
         // Do any additional setup after loading the view.
     }
@@ -161,7 +161,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let nextVC = storyboard?.instantiateViewController(identifier: "StoreTableViewController") as! StoreTableViewController
+        let nextVC = storyboard?.instantiateViewController(identifier: "StoreViewController") as! StoreViewController
         navigationController?.pushViewController(nextVC, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

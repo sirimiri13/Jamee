@@ -53,6 +53,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         setView()
         createPickerAddress()
         dismissPickerView()
+        self.hideKeyboardWhenTappedAround()
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
@@ -259,37 +260,21 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
     @IBAction func addTapped(_ sender: Any) {
         picked = true
         let number = NumberFormatter().number(from: numberLabel.text!)
-       
-    
-        if (time4Button.isSelected){
-            if (timeTextField.text?.isEmpty == true){
+        if (time4Button.isSelected && timeTextField.text?.isEmpty == true){
                 timeEmptyLabel.alpha = 1
                 timeEmptyLabel.text = "Hãy nhập khung giờ bạn muốn"
                 timeEmptyLabel.textColor = UIColor.pinkBackground()
             }
-            else {
-                for _ in 0..<number!.intValue{
-                    ItemPicked.append(item!)
-                    let priceItem = NumberFormatter().number(from: priceLabel.text!)
-                    let priceInt = priceItem?.doubleValue
-                    totalPrice += priceInt!
-                }
-                navigationController?.popViewController(animated: true)
-            }
-        }
         else {
             for _ in 0..<number!.intValue{
                 ItemPicked.append(item!)
-                let priceItem = NumberFormatter().number(from: priceLabel.text!)
-                let priceInt = priceItem?.doubleValue
-                totalPrice += priceInt!
+                print(item?.price as Any)
+                let priceItem = Double(item!.price)
+                totalPrice += priceItem!
             }
             navigationController?.popViewController(animated: true)
-
         }
-        
     }
-    
     
     func createPickerAddress(){
         let picker = UIPickerView()

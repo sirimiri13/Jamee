@@ -96,6 +96,9 @@ extension String {
         dateFormatter.dateFormat = "dd/MM/yyyy"
         return dateFormatter.date(from: self) as! Date
     }
+        func toDouble() -> Double? {
+            return NumberFormatter().number(from: self)?.doubleValue
+        }
 }
 
 extension UITextField{
@@ -107,4 +110,16 @@ extension UITextField{
            self.layer.addSublayer(bottomLine)
            
        }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

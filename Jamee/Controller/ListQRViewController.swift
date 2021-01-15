@@ -45,7 +45,6 @@ extension ListQRViewController: UITableViewDelegate, UITableViewDataSource{
         let vc = storyboard?.instantiateViewController(identifier: "QRDetailViewController") as! QRDetailViewController
         vc.time = QR[indexPath.row].time
         vc.address = QR[indexPath.row].address
-        print("tap")
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -17,11 +17,11 @@
 		2D8B8FF325985644003CF7AF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FF225985644003CF7AF /* Extension.swift */; };
 		2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B8FFA25985C1B003CF7AF /* Deal.swift */; };
 		2D9559A925A4A0280059FD33 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9559A825A4A0280059FD33 /* QRViewController.swift */; };
-		2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7C625987B610075D926 /* StoreTableViewController.swift */; };
 		2D9AB7CE2598892F0075D926 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7CD2598892F0075D926 /* OrderViewController.swift */; };
 		2D9AB7D12598D54E0075D926 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9AB7D02598D54E0075D926 /* Item.swift */; };
 		2DA38DD625A2D4930078F085 /* Voucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA38DD525A2D4930078F085 /* Voucher.swift */; };
 		2DA38DDA25A35D6E0078F085 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA38DD925A35D6E0078F085 /* ConfirmOrderViewController.swift */; };
+		2DA4ACF425B213F80031CE54 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4ACF325B213F80031CE54 /* StoreViewController.swift */; };
 		2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457C25960B7C005F3BBF /* AppDelegate.swift */; };
 		2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */; };
 		2DCA458425960B7C005F3BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458225960B7C005F3BBF /* Main.storyboard */; };
@@ -40,11 +40,11 @@
 		2D8B8FF225985644003CF7AF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		2D8B8FFA25985C1B003CF7AF /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		2D9559A825A4A0280059FD33 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
-		2D9AB7C625987B610075D926 /* StoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		2D9AB7CD2598892F0075D926 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		2D9AB7D02598D54E0075D926 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		2DA38DD525A2D4930078F085 /* Voucher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voucher.swift; sourceTree = "<group>"; };
 		2DA38DD925A35D6E0078F085 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
+		2DA4ACF325B213F80031CE54 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		2DCA457925960B7C005F3BBF /* Jamee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jamee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCA457C25960B7C005F3BBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,13 +75,13 @@
 			children = (
 				2D4D9A752597A589005F51AF /* TabBarViewController.swift */,
 				2D4D9A872597ADE9005F51AF /* HomeViewController.swift */,
-				2D9AB7C625987B610075D926 /* StoreTableViewController.swift */,
 				2D9AB7CD2598892F0075D926 /* OrderViewController.swift */,
 				5CD986D72597B1490006D47B /* MyVoucherViewController.swift */,
 				2DA38DD925A35D6E0078F085 /* ConfirmOrderViewController.swift */,
 				2D9559A825A4A0280059FD33 /* QRViewController.swift */,
 				2D67D01E25A83AAE00EE4C54 /* ListQRViewController.swift */,
 				2D67D02125A85ACF00EE4C54 /* QRDetailViewController.swift */,
+				2DA4ACF325B213F80031CE54 /* StoreViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,9 +282,9 @@
 				2D8B8FF325985644003CF7AF /* Extension.swift in Sources */,
 				2D9AB7D12598D54E0075D926 /* Item.swift in Sources */,
 				2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */,
-				2D9AB7C725987B610075D926 /* StoreTableViewController.swift in Sources */,
 				2D4D9A802597A9AB005F51AF /* Color.swift in Sources */,
 				2D67D02225A85ACF00EE4C54 /* QRDetailViewController.swift in Sources */,
+				2DA4ACF425B213F80031CE54 /* StoreViewController.swift in Sources */,
 				2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */,
 				2DA38DDA25A35D6E0078F085 /* ConfirmOrderViewController.swift in Sources */,
 				2D9AB7CE2598892F0075D926 /* OrderViewController.swift in Sources */,

@@ -1,39 +1,41 @@
 //
-//  StoreTableViewController.swift
+//  StoreViewController.swift
 //  Jamee
 //
-//  Created by Huong Lam on 12/27/2020.
+//  Created by Huong Lam on 01/16/2021.
 //
 
 import UIKit
 
-
-//var itemPicked = [Item]()
 var picked : Bool = false
 var numOfItem : Int = 0
 var totalPrice : Double = 0.000
+class StoreCell: UITableViewCell{
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+}
 
-class StoreTableViewController: UITableViewController {
-
-    @IBOutlet weak var buyButton: UIButton!
+class StoreViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     var list = listMenu()
-   
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
+       // setView()
+        // Do any additional setup after loading the view.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = true
         navigationController?.navigationBar.topItem?.title = "MENU"
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
         navigationController?.navigationBar.tintColor = UIColor.white
-       // tableView.sizeToFit()
         setView()
+
     }
     
     func setView(){
-        if (ItemPicked.isEmpty == false){
+        if (picked == true){
             let footerView = UIView()
             footerView.backgroundColor = UIColor.pinkBackground()
             footerView.tintColor = .white
@@ -41,11 +43,12 @@ class StoreTableViewController: UITableViewController {
             view.addSubview(footerView)
             footerView.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor,constant: view.bounds.maxY - 30),
-                footerView.leftAnchor.constraint(equalTo:view.leftAnchor,constant: 10 ),
-                footerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: view.bounds.maxX - 10),
+                footerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20),
+                footerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 5),
+                footerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -5),
                 footerView.heightAnchor.constraint(equalToConstant: 50)
             ])
+
             
             let contentLabel = UILabel()
             contentLabel.text = "Giỏ hàng: \t\t \(ItemPicked.count) món hàng \t\t \(String(format:" %.3f", totalPrice)) đồng"
@@ -54,9 +57,10 @@ class StoreTableViewController: UITableViewController {
             contentLabel.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.activate([
-                contentLabel.topAnchor.constraint(equalTo: footerView.topAnchor,constant: 15),
+                contentLabel.topAnchor.constraint(equalTo: footerView.topAnchor,constant: 13),
                 contentLabel.leftAnchor.constraint(equalTo:footerView.leftAnchor,constant: 20 ),
                 contentLabel.rightAnchor.constraint(equalTo: footerView.rightAnchor, constant: 10),
+                contentLabel.heightAnchor.constraint(equalToConstant: 25)
             ])
             footerView.isUserInteractionEnabled = true
             let tap = UITapGestureRecognizer(target: self, action: #selector(confirmOrder(_:)))
@@ -65,17 +69,18 @@ class StoreTableViewController: UITableViewController {
        
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+
+ func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+ func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return list.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath) as! StoreCell
         cell.nameLabel.text = list[indexPath.row].name
         cell.priceLabel.text = list[indexPath.row].price
@@ -96,7 +101,7 @@ class StoreTableViewController: UITableViewController {
         vc.price = list[index].price
         navigationController?.pushViewController(vc, animated: true)
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         120
     }
     
