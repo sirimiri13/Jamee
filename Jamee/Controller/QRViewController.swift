@@ -38,13 +38,9 @@ class QRViewController: UIViewController {
     }
 
     @objc func closeView(_ sender: Any){
+        ItemPicked.removeAll()
+        totalPrice = 0.000
         navigationController?.popToRootViewController(animated: true)
     }
   
-//    @IBAction func exitTapped(_ sender: Any) {
-//        let vc = storyboard?.instantiateViewController(identifier: "HomeViewController") as! HomeViewController
-//        vc.modalPresentationStyle = .fullScreen
-//        self.present(vc, animated: true, completion: nil)
-//    }
-    
 }
