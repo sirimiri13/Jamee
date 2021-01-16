@@ -8,12 +8,12 @@
 import UIKit
 
 protocol PickCategoryProtocol {
-    func pickCategory(listDeal: [Deal])
+    func pickCategory(listDeal: [Deal],index: Int)
 }
 
 class PickCategoryViewController: UIViewController {
     
-    var delegate : PickCategoryProtocol!
+    var delegate : PickCategoryProtocol?
     var tag : Int = 0
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var riceImage: UIImageView!
@@ -82,13 +82,12 @@ class PickCategoryViewController: UIViewController {
             print("no data")
         }
         
-        let riceTap = UITapGestureRecognizer(target: self, action: #selector(dismisDialog(_:)))
-        let cookieTap = UITapGestureRecognizer(target: self, action: #selector(dismisDialog(_:)))
-        let milkTeaTap = UITapGestureRecognizer(target: self, action: #selector(dismisDialog(_:)))
-        let coffeeTap = UITapGestureRecognizer(target: self, action: #selector(dismisDialog(_:)))
-        let chickenTap = UITapGestureRecognizer(target: self, action: #selector(dismisDialog(_:)))
-        let pizzaTap = UITapGestureRecognizer(target: self, action: #selector(dismisDialog(_:)))
-        
+        let riceTap = UITapGestureRecognizer(target: self, action: #selector(ricePicker(_:)))
+        let cookieTap = UITapGestureRecognizer(target: self, action: #selector(cookiePicker(_:)))
+        let milkTeaTap = UITapGestureRecognizer(target: self, action: #selector(milkTeaPicker(_:)))
+        let coffeeTap = UITapGestureRecognizer(target: self, action: #selector(coffeePicker(_:)))
+        let chickenTap = UITapGestureRecognizer(target: self, action: #selector(chickenPicker(_:)))
+        let pizzaTap = UITapGestureRecognizer(target: self, action: #selector(pizzaPicker(_:)))
         
         
         
@@ -110,7 +109,28 @@ class PickCategoryViewController: UIViewController {
     }
 
     
-    @objc func dismisDialog(_ sender: UITapGestureRecognizer){
+    @objc func ricePicker(_ sender: UITapGestureRecognizer){
+        self.delegate!.pickCategory(listDeal: listRice(),index: 0)
+        self.dismiss(animated: true, completion: nil)
+    }
+    @objc func cookiePicker(_ sender: UITapGestureRecognizer){
+        self.delegate!.pickCategory(listDeal: listCookie(),index: 1)
+        self.dismiss(animated: true, completion: nil)
+    }
+    @objc func milkTeaPicker(_ sender: UITapGestureRecognizer){
+        self.delegate!.pickCategory(listDeal: listMilkTea(),index: 2)
+        self.dismiss(animated: true, completion: nil)
+    }
+    @objc func coffeePicker(_ sender: UITapGestureRecognizer){
+        self.delegate!.pickCategory(listDeal: listCoffee(),index: 3)
+        self.dismiss(animated: true, completion: nil)
+    }
+    @objc func chickenPicker(_ sender: UITapGestureRecognizer){
+        self.delegate!.pickCategory(listDeal: listChicken(),index: 4)
+        self.dismiss(animated: true, completion: nil)
+    }
+    @objc func pizzaPicker(_ sender: UITapGestureRecognizer){
+        self.delegate!.pickCategory(listDeal: listPizza(),index: 5)
         self.dismiss(animated: true, completion: nil)
     }
 }

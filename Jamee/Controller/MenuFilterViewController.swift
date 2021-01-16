@@ -14,10 +14,19 @@ class itemCell: UITableViewCell{
     @IBOutlet weak var collectButton: UIButton!
 }
 
-class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, PickCategoryProtocol {
-    func pickCategory(listDeal: [Deal]) {
-        self.listDeal = listDeal
+class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, PickCategoryProtocol, FilterProtocol{
+    func getFilter(type: String) {
+        print(type)
+        typeFilter.text = type
     }
+    
+    func pickCategory(listDeal: [Deal],index: Int) {
+        self.listDeal = listDeal
+        indexCategory = index
+        setView()
+        dealTableView.reloadData()
+    }
+    
     
     var isCategory = false
     
@@ -66,6 +75,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         numberLabel.text = "\(listDeal.count) kết quả"
         numberLabel.textColor = UIColor.pinkBackground()
         numberLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        
         categoryView.layer.addBorder(edge: .right, color: UIColor.pinkBackground(), thickness: 1)
         footerView.backgroundColor = .white
         footerView.layer.cornerRadius = 10
@@ -78,7 +88,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         titleFilter.text = "Bộ lọc"
         titleFilter.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         typeFilter.textColor = UIColor.pinkBackground()
-        typeFilter.text = typeOfFilter.New.title
+        typeFilter.text = "Mới nhất"
         
         let categoryTap = UITapGestureRecognizer(target: self, action: #selector(categoryTapped(_:)))
         categoryView.addGestureRecognizer(categoryTap)
@@ -89,6 +99,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         let pickCategoryVC = PickCategoryViewController()
         pickCategoryVC.transitioningDelegate = self
         pickCategoryVC.modalPresentationStyle = .custom
+        pickCategoryVC.delegate = self
         return pickCategoryVC
     }()
     
@@ -101,6 +112,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         let filterVC = FilterViewController()
         filterVC.transitioningDelegate = self
         filterVC.modalPresentationStyle = .custom
+        filterVC.delegate = self
         return filterVC
     }()
     
@@ -179,11 +191,11 @@ class FilterPickPresention : UIPresentationController{
     override var frameOfPresentedViewInContainerView: CGRect {
         let padding: CGFloat = 20
         let width: CGFloat = 374
-        var height: CGFloat = 194
+        var height: CGFloat = 239
         var y: CGFloat = 250
         
         if let _ = presentedViewController as? FilterViewController {
-            height = 194
+            height = 239
             y = 250
         }
         
