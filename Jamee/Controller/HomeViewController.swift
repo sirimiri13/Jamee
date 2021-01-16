@@ -23,49 +23,6 @@ class ListDealCell : UITableViewCell{
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
  
-    private enum itemMenu: String, CaseIterable{
-        case Rice
-        case Cookie
-        case BubbleTea
-        case Coffee
-        case Chicken
-        case Pizza
-        
-        var title: String  {
-            switch self {
-            case .Rice:
-                return "Cơm"
-            case .Cookie:
-                return "Bánh"
-            case .BubbleTea:
-                return "Trà Sữa"
-            case .Coffee:
-                return "Cà phê"
-            case .Chicken:
-                return "Gà rán"
-            case .Pizza:
-                return "Pizza"
-            }
-        }
-            
-        var imageItem: String {
-            switch self {
-            case .Rice:
-                return "rice"
-            case .Cookie:
-                return "cookie"
-            case .BubbleTea:
-                return "bubble-tea"
-            case .Coffee:
-                return "coffee-cup"
-            case .Chicken:
-                return "fried-chicken"
-            case .Pizza:
-                return "pizza-1"
-            }
-        }
-        
-    }
     
     
     @IBOutlet weak var avatarImage: UIImageView!
@@ -167,7 +124,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
-   
 }
 
 
@@ -178,7 +134,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as! categoryCell
-        
         let item = itemMenu.allCases[indexPath.row]
         cell.iconImage.image = UIImage(named: item.imageItem)?.withTintColor(UIColor.pinkBackground())
         cell.titleLabel.text = item.title
@@ -186,5 +141,41 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case itemMenu.Rice.rawValue:
+            let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
+            vc.listDeal = listRice()
+            vc.indexCategory = itemMenu.Rice.rawValue
+            navigationController?.pushViewController(vc, animated: true)
+        case itemMenu.Cookie.rawValue:
+            let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
+            vc.listDeal = listCookie()
+            vc.indexCategory = itemMenu.Cookie.rawValue
+            navigationController?.pushViewController(vc, animated: true)
+        case itemMenu.BubbleTea.rawValue:
+            let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
+            vc.listDeal = listMilkTea()
+            vc.indexCategory = itemMenu.BubbleTea.rawValue
+            navigationController?.pushViewController(vc, animated: true)
+        case itemMenu.Coffee.rawValue:
+            let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
+            vc.listDeal = listCoffee()
+            vc.indexCategory = itemMenu.Cookie.rawValue
+            navigationController?.pushViewController(vc, animated: true)
+        case itemMenu.Chicken.rawValue:
+            let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
+            vc.listDeal = listChicken()
+            vc.indexCategory = itemMenu.Chicken.rawValue
+            navigationController?.pushViewController(vc, animated: true)
+        case itemMenu.Pizza.rawValue:
+            let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
+            vc.listDeal = listPizza()
+            vc.indexCategory = itemMenu.Pizza.rawValue
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            print("done")
+        }
+    }
     
 }

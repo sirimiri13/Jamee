@@ -22,6 +22,12 @@
 		2DA38DD625A2D4930078F085 /* Voucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA38DD525A2D4930078F085 /* Voucher.swift */; };
 		2DA38DDA25A35D6E0078F085 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA38DD925A35D6E0078F085 /* ConfirmOrderViewController.swift */; };
 		2DA4ACF425B213F80031CE54 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4ACF325B213F80031CE54 /* StoreViewController.swift */; };
+		2DA4ACFE25B29EF00031CE54 /* MenuFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4ACFD25B29EF00031CE54 /* MenuFilterViewController.swift */; };
+		2DA4AD0225B2B6EA0031CE54 /* PickCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4AD0025B2B6E90031CE54 /* PickCategoryViewController.swift */; };
+		2DA4AD0325B2B6EA0031CE54 /* PickCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA4AD0125B2B6E90031CE54 /* PickCategoryViewController.xib */; };
+		2DA4AD0625B2BA6E0031CE54 /* MenuEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4AD0525B2BA6E0031CE54 /* MenuEnum.swift */; };
+		2DA4AD0A25B2D6ED0031CE54 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA4AD0825B2D6EC0031CE54 /* FilterViewController.swift */; };
+		2DA4AD0B25B2D6ED0031CE54 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA4AD0925B2D6EC0031CE54 /* FilterViewController.xib */; };
 		2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457C25960B7C005F3BBF /* AppDelegate.swift */; };
 		2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */; };
 		2DCA458425960B7C005F3BBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA458225960B7C005F3BBF /* Main.storyboard */; };
@@ -45,6 +51,12 @@
 		2DA38DD525A2D4930078F085 /* Voucher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voucher.swift; sourceTree = "<group>"; };
 		2DA38DD925A35D6E0078F085 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
 		2DA4ACF325B213F80031CE54 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		2DA4ACFD25B29EF00031CE54 /* MenuFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuFilterViewController.swift; sourceTree = "<group>"; };
+		2DA4AD0025B2B6E90031CE54 /* PickCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickCategoryViewController.swift; sourceTree = "<group>"; };
+		2DA4AD0125B2B6E90031CE54 /* PickCategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickCategoryViewController.xib; sourceTree = "<group>"; };
+		2DA4AD0525B2BA6E0031CE54 /* MenuEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuEnum.swift; sourceTree = "<group>"; };
+		2DA4AD0825B2D6EC0031CE54 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		2DA4AD0925B2D6EC0031CE54 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 		2DCA457925960B7C005F3BBF /* Jamee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jamee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DCA457C25960B7C005F3BBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DCA457E25960B7C005F3BBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +94,7 @@
 				2D67D01E25A83AAE00EE4C54 /* ListQRViewController.swift */,
 				2D67D02125A85ACF00EE4C54 /* QRDetailViewController.swift */,
 				2DA4ACF325B213F80031CE54 /* StoreViewController.swift */,
+				2DA4ACFD25B29EF00031CE54 /* MenuFilterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -102,8 +115,20 @@
 				2D9AB7D02598D54E0075D926 /* Item.swift */,
 				2DA38DD525A2D4930078F085 /* Voucher.swift */,
 				2D67D02425A85B0300EE4C54 /* QR.swift */,
+				2DA4AD0525B2BA6E0031CE54 /* MenuEnum.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2DA4ACFB25B29E4F0031CE54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DA4AD0025B2B6E90031CE54 /* PickCategoryViewController.swift */,
+				2DA4AD0125B2B6E90031CE54 /* PickCategoryViewController.xib */,
+				2DA4AD0825B2D6EC0031CE54 /* FilterViewController.swift */,
+				2DA4AD0925B2D6EC0031CE54 /* FilterViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		2DCA457025960B7C005F3BBF = {
@@ -127,6 +152,7 @@
 		2DCA457B25960B7C005F3BBF /* Jamee */ = {
 			isa = PBXGroup;
 			children = (
+				2DA4ACFB25B29E4F0031CE54 /* View */,
 				2D8B8FF525985AF3003CF7AF /* Model */,
 				2D4D9A7E2597A968005F51AF /* Utilities */,
 				2D4D9A782597A598005F51AF /* Controller */,
@@ -216,9 +242,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA4AD0B25B2D6ED0031CE54 /* FilterViewController.xib in Resources */,
 				2DCA458925960B7D005F3BBF /* LaunchScreen.storyboard in Resources */,
 				2DCA458625960B7D005F3BBF /* Assets.xcassets in Resources */,
 				2DCA458425960B7C005F3BBF /* Main.storyboard in Resources */,
+				2DA4AD0325B2B6EA0031CE54 /* PickCategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,11 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DA4AD0A25B2D6ED0031CE54 /* FilterViewController.swift in Sources */,
 				2DA38DD625A2D4930078F085 /* Voucher.swift in Sources */,
 				2D4D9A882597ADE9005F51AF /* HomeViewController.swift in Sources */,
 				2D67D01F25A83AAE00EE4C54 /* ListQRViewController.swift in Sources */,
+				2DA4AD0625B2BA6E0031CE54 /* MenuEnum.swift in Sources */,
 				2D4D9A762597A589005F51AF /* TabBarViewController.swift in Sources */,
 				2D9559A925A4A0280059FD33 /* QRViewController.swift in Sources */,
+				2DA4ACFE25B29EF00031CE54 /* MenuFilterViewController.swift in Sources */,
 				2DCA457D25960B7C005F3BBF /* AppDelegate.swift in Sources */,
 				5CD986D82597B1490006D47B /* MyVoucherViewController.swift in Sources */,
 				2D67D02525A85B0300EE4C54 /* QR.swift in Sources */,
@@ -284,6 +315,7 @@
 				2DCA457F25960B7C005F3BBF /* SceneDelegate.swift in Sources */,
 				2D4D9A802597A9AB005F51AF /* Color.swift in Sources */,
 				2D67D02225A85ACF00EE4C54 /* QRDetailViewController.swift in Sources */,
+				2DA4AD0225B2B6EA0031CE54 /* PickCategoryViewController.swift in Sources */,
 				2DA4ACF425B213F80031CE54 /* StoreViewController.swift in Sources */,
 				2D8B8FFB25985C1B003CF7AF /* Deal.swift in Sources */,
 				2DA38DDA25A35D6E0078F085 /* ConfirmOrderViewController.swift in Sources */,

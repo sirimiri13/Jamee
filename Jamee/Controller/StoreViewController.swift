@@ -29,7 +29,7 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController?.navigationBar.topItem?.title = "MENU"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
+      
         navigationController?.navigationBar.tintColor = UIColor.white
         setView()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backView(_:)))

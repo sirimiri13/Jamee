@@ -68,12 +68,9 @@ extension NSMutableAttributedString {
 extension UIView {
     func addDashBorder() {
         let color = UIColor.black.cgColor
-
         let shapeLayer:CAShapeLayer = CAShapeLayer()
-
         let frameSize = self.frame.size
         let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
-
         shapeLayer.bounds = shapeRect
         shapeLayer.name = "DashBorder"
         shapeLayer.position = CGPoint(x: frameSize.width/2, y: frameSize.height/2)
@@ -83,11 +80,44 @@ extension UIView {
         shapeLayer.lineJoin = .round
         shapeLayer.lineDashPattern = [2,4]
         shapeLayer.path = UIBezierPath(roundedRect: shapeRect, cornerRadius: 10).cgPath
-
         self.layer.masksToBounds = false
-
         self.layer.addSublayer(shapeLayer)
     }
+    func addLeftBorder(with color: UIColor?, andWidth borderWidth: CGFloat) {
+        self.backgroundColor = color
+        self.frame = CGRect(x: 0, y: 0, width: borderWidth, height: frame.size.height)
+        self.autoresizingMask = [.flexibleHeight, .flexibleRightMargin]
+        addSubview(self)
+    }
+
+}
+
+extension CALayer {
+
+  func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat) {
+
+    let border = CALayer()
+
+    switch edge {
+    case UIRectEdge.top:
+        border.frame = CGRect(x: 0, y: 0, width: frame.width, height: thickness)
+
+    case UIRectEdge.bottom:
+        border.frame = CGRect(x:0, y: frame.height - thickness, width: frame.width, height:thickness)
+
+    case UIRectEdge.left:
+        border.frame = CGRect(x:0, y:0, width: thickness, height: frame.height)
+
+    case UIRectEdge.right:
+        border.frame = CGRect(x: frame.width - thickness, y: 0, width: thickness, height: frame.height)
+
+    default: do {}
+    }
+
+    border.backgroundColor = color.cgColor
+
+    addSublayer(border)
+ }
 }
 
 extension String {
