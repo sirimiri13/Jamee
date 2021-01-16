@@ -39,9 +39,12 @@ class PickCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        setView()
+        print(tag)
+    }
     
     func setView(){
         titleLabel.text = "DANH MỤC"
@@ -62,22 +65,83 @@ class PickCategoryViewController: UIViewController {
         switch tag {
         case itemMenu.Rice.rawValue:
             riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-            riceView.layer.borderWidth = 1.5
+            riceView.layer.borderWidth = 2
+            //cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
+            cookieView.layer.borderWidth = 0
+          //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            milkTeaView.layer.borderWidth = 0
+           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            coffeeView.layer.borderWidth = 0
+          //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            chickeView.layer.borderWidth = 0
+           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            pizzaView.layer.borderWidth = 0
         case itemMenu.Cookie.rawValue:
-            cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
-            cookieView.layer.borderWidth = 1.5
+           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            riceView.layer.borderWidth = 0
+           cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
+            cookieView.layer.borderWidth = 2
+            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            milkTeaView.layer.borderWidth = 0
+           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            coffeeView.layer.borderWidth = 0
+          //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            chickeView.layer.borderWidth = 0
+           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+            pizzaView.layer.borderWidth = 0
         case itemMenu.BubbleTea.rawValue:
-            milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
-            milkTeaView.layer.borderWidth = 1.5
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             riceView.layer.borderWidth = 0
+            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
+             cookieView.layer.borderWidth = 0
+             milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            milkTeaView.layer.borderWidth = 2
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             coffeeView.layer.borderWidth = 0
+           //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             chickeView.layer.borderWidth = 0
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             pizzaView.layer.borderWidth = 0
         case itemMenu.Coffee.rawValue:
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             riceView.layer.borderWidth = 0
+            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
+             cookieView.layer.borderWidth = 0
+            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            milkTeaView.layer.borderWidth = 0
             coffeeView.layer.borderColor = UIColor.pinkBackground().cgColor
-            coffeeView.layer.borderWidth = 1.5
+             coffeeView.layer.borderWidth = 2
+           //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             chickeView.layer.borderWidth = 0
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             pizzaView.layer.borderWidth = 0
         case itemMenu.Chicken.rawValue:
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             riceView.layer.borderWidth = 0
+            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
+             cookieView.layer.borderWidth = 0
+            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            milkTeaView.layer.borderWidth = 0
+           // coffeeView.layer.borderColor = UIColor.pinkBackground().cgColor
+             coffeeView.layer.borderWidth = 0
             chickeView.layer.borderColor = UIColor.pinkBackground().cgColor
-            chickeView.layer.borderWidth = 1.5
+             chickeView.layer.borderWidth = 2
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             pizzaView.layer.borderWidth = 0
         case itemMenu.Pizza.rawValue:
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             riceView.layer.borderWidth = 0
+            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
+             cookieView.layer.borderWidth = 0
+            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            milkTeaView.layer.borderWidth = 0
+           // coffeeView.layer.borderColor = UIColor.pinkBackground().cgColor
+             coffeeView.layer.borderWidth = 0
+           // chickeView.layer.borderColor = UIColor.pinkBackground().cgColor
+             chickeView.layer.borderWidth = 0
+            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+             pizzaView.layer.borderWidth = 2
             pizzaView.layer.borderColor = UIColor.pinkBackground().cgColor
-            pizzaView.layer.borderWidth = 1.5
         default:
             print("no data")
         }

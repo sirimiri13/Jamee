@@ -22,7 +22,8 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
     
     func pickCategory(listDeal: [Deal],index: Int) {
         self.listDeal = listDeal
-        indexCategory = index
+        self.indexCategory = index
+        PickCategoryVC.tag = index
         setView()
         dealTableView.reloadData()
     }
@@ -99,6 +100,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         let pickCategoryVC = PickCategoryViewController()
         pickCategoryVC.transitioningDelegate = self
         pickCategoryVC.modalPresentationStyle = .custom
+        pickCategoryVC.tag = indexCategory
         pickCategoryVC.delegate = self
         return pickCategoryVC
     }()
@@ -117,7 +119,6 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
     }()
     
     @objc func filterTapped(_ sender: UITapGestureRecognizer){
-        print(isCategory)
         isCategory = false
         self.present(FilterVC,animated: true)
         
