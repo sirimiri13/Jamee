@@ -14,7 +14,7 @@ class itemCell: UITableViewCell{
     @IBOutlet weak var collectButton: UIButton!
 }
 
-class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, PickCategoryProtocol, FilterProtocol{
+class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, PickCategoryProtocol, FilterProtocol{
     func getFilter(type: String) {
         print(type)
         typeFilter.text = type
@@ -30,7 +30,8 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
     
     
     var isCategory = false
-    
+    var isTextFieldEditing: Bool = false
+    var isSearching: Bool = false
     
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var categoryView: UIView!
@@ -68,11 +69,16 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         tabBarController?.tabBar.isHidden = true
         navigationController?.isNavigationBarHidden = false
     }
+   
     
     func setView(){
         view.backgroundColor = UIColor.whiteCustom()
         let searchBar = UISearchBar()
         self.navigationItem.titleView = searchBar
+        searchBar.isTranslucent = true
+        searchBar.searchBarStyle = .minimal
+        searchBar.delegate = self
+        searchBar.sizeToFit()
         numberLabel.text = "\(listDeal.count) kết quả"
         numberLabel.textColor = UIColor.pinkBackground()
         numberLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
@@ -123,6 +129,8 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         self.present(FilterVC,animated: true)
         
     }
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 123
     }
@@ -143,6 +151,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         cell.collectButton.tintColor = UIColor.blue
         return cell
     }
+  
 
 
 }
@@ -217,3 +226,5 @@ class FilterPickPresention : UIPresentationController{
         presentedViewController.dismiss(animated: true, completion: nil)
     }
 }
+
+

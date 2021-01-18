@@ -29,10 +29,11 @@ class StoreViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController?.navigationBar.topItem?.title = "MENU"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-      
         navigationController?.navigationBar.tintColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
         setView()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backView(_:)))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(backView(_:)))
+        
     }
     
     @objc func backView(_ sender: UIButton){
