@@ -8,5 +8,6 @@ target 'Jamee' do
   # Pods for Jamee
 	pod 'ImageSlideshow', '~> 1.9.0'
 	pod 'SCLAlertView'
+	pod 'IQKeyboardManagerSwift', '6.3.0'
 
 end

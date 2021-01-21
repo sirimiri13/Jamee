@@ -39,7 +39,7 @@ class ConfirmOrderViewController: UIViewController {
         self.view.addSubview(addressView)
         addressView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            addressView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            addressView.topAnchor.constraint(equalTo: view.topAnchor, constant: 70),
             addressView.leftAnchor.constraint(equalTo: view.leftAnchor),
             addressView.rightAnchor.constraint(equalTo: view.rightAnchor),
             addressView.heightAnchor.constraint(equalToConstant: 45)

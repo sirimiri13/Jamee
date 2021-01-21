@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 class itemCell: UITableViewCell{
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -14,7 +15,7 @@ class itemCell: UITableViewCell{
     @IBOutlet weak var collectButton: UIButton!
 }
 
-class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, PickCategoryProtocol, FilterProtocol{
+class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, PickCategoryProtocol, FilterProtocol{
     func getFilter(type: String) {
         print(type)
         typeFilter.text = type
@@ -31,7 +32,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
       
     }
     
-    
+    let searchBar = UISearchBar()
     var isCategory = false
     var isTextFieldEditing: Bool = false
     var isSearching: Bool = false
@@ -67,7 +68,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         super.viewDidLoad()
         setView()
         self.dealTableView.tableFooterView = UIView(frame: CGRect.zero)
-        self.hideKeyboardWhenTappedAround()
+//        self.hideKeyboardWhenTappedAround()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -79,12 +80,14 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
     func setView(){
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
         view.backgroundColor = UIColor.whiteCustom()
-        let searchBar = UISearchBar()
+    
         navigationItem.titleView = searchBar
-        searchBar.isTranslucent = true
+      //  searchBar.isTranslucent = true
+        searchBar.placeholder = "Search...."
         searchBar.searchBarStyle = .minimal
         searchBar.delegate = self
         searchBar.sizeToFit()
+       // searchBar.showsCancelButton = true
         numberLabel.text = "\(listDeal.count) kết quả"
         numberLabel.textColor = UIColor.pinkBackground()
         numberLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
@@ -107,7 +110,9 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         categoryView.addGestureRecognizer(categoryTap)
         let filterTap = UITapGestureRecognizer(target: self, action: #selector(filterTapped(_:)))
         FilterView.addGestureRecognizer(filterTap)
+        
     }
+  
     lazy var PickCategoryVC: PickCategoryViewController = {
         let pickCategoryVC = PickCategoryViewController()
         pickCategoryVC.transitioningDelegate = self
@@ -172,7 +177,24 @@ extension MenuFilterViewController : UIViewControllerTransitioningDelegate {
       
     }
 }
+extension MenuFilterViewController: UISearchBarDelegate{
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+        searchBar.resignFirstResponder()
+    }
+    func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
+        self.searchBar.endEditing(true)
+        searchBar.resignFirstResponder()
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+        searchBar.resignFirstResponder()
 
+    }
+
+    
+}
 class PickCategoryPresention : UIPresentationController{
     override var frameOfPresentedViewInContainerView: CGRect {
         let padding: CGFloat = 0

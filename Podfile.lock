@@ -2,21 +2,25 @@ PODS:
   - ImageSlideshow (1.9.2):
     - ImageSlideshow/Core (= 1.9.2)
   - ImageSlideshow/Core (1.9.2)
+  - IQKeyboardManagerSwift (6.3.0)
   - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - ImageSlideshow (~> 1.9.0)
+  - IQKeyboardManagerSwift (= 6.3.0)
   - SCLAlertView
 
 SPEC REPOS:
   trunk:
     - ImageSlideshow
+    - IQKeyboardManagerSwift
     - SCLAlertView
 
 SPEC CHECKSUMS:
   ImageSlideshow: be305b54eaf2b2cfc7a7141c7c734605d44dc07d
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: 2579c05996f379c15d1078867c097f16838e9eae
+PODFILE CHECKSUM: 1f4e348c45a1d7745cd398a0d8170076c9d90d92
 
 COCOAPODS: 1.10.0

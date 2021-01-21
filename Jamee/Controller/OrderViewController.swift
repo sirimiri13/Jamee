@@ -53,7 +53,6 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         setView()
         createPickerAddress()
         dismissPickerView()
-        self.hideKeyboardWhenTappedAround()
     }
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
