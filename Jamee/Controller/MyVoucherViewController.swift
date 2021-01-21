@@ -9,25 +9,24 @@ import UIKit
 
 
 
-var isHiden: Bool = false
+
 
 class tableCell: UITableViewCell{
     @IBOutlet weak var VoucherImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var CollectButton: UIButton!
-    @IBAction func CollectTapped(_ sender: Any) {
-        CollectButton.isSelected = false
-        CollectButton.tintColor = UIColor.gray
-        CollectButton.setTitle("Collected", for: .normal)
-    }
 }
 
 class MyVoucherViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
-    
+    enum Screen : CaseIterable{
+        case Voucher
+        case MyVoucher
+    }
     let color = UIColor.pinkBackground()
     var botBorder = UIView();
     var listData = listVoucher()
+    var listMyVoucher : [Voucher] = []
+    var isHiden: Bool = false
     //--- Variable
    
     //--- Outlet
@@ -96,23 +95,44 @@ class MyVoucherViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! tableCell
-        cell.nameLabel.text = listData[indexPath.row].voucherName;
-        cell.nameLabel.numberOfLines = 0
-        cell.dateLabel.text = "HSD: \(listData[indexPath.row].date)";
-        if (isHiden == true){
-            cell.CollectButton.isHidden = true
+        if (isHiden == false){
+            cell.nameLabel.text = listData[indexPath.row].voucherName;
+            cell.nameLabel.numberOfLines = 0
+            cell.dateLabel.text = "HSD: \(listData[indexPath.row].date)";
+            
+
+            let collectButton = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 20))
+            collectButton.setTitle("Collect", for: .normal)
+            collectButton.setTitleColor(UIColor.pinkBackground(), for: .normal)
+            collectButton.tag = indexPath.row
+            collectButton.addTarget(self, action: #selector(collectTapped(_:)), for: .touchUpInside)
+            cell.accessoryView = collectButton
+            cell.accessoryView!.isHidden = false
         }
+       
         else {
-            cell.CollectButton.isHidden = false
-            cell.CollectButton.setTitle("Collect", for: .normal)
+            cell.nameLabel.text = listMyVoucher[indexPath.row].voucherName;
+            cell.nameLabel.numberOfLines = 0
+            cell.dateLabel.text = "HSD: \(listMyVoucher[indexPath.row].date)";
+            cell.accessoryView!.isHidden = true
         }
-        
-        cell.CollectButton.tintColor = UIColor.pinkBackground()
         return cell
     }
     
+    
+    @objc func collectTapped(_ sender: UIButton){
+        sender.setTitle("Collected", for: .normal)
+        sender.setTitleColor(UIColor.gray, for: .normal)
+        listMyVoucher.append(listData[sender.tag])
+        if (listMyVoucher.count > 1){
+                listMyVoucher = listMyVoucher.sorted {
+                $0.date.toDate() < $1.date.toDate()
+            }
+        }
+        listData.remove(at: sender.tag)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listData.count;
+        return isHiden ? listMyVoucher.count : listData.count
     }
     
 }

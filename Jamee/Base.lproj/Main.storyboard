@@ -140,17 +140,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLY-Pv-M5I">
-                                                    <rect key="frame" x="346" y="0.0" width="62" height="100"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="62" id="cGl-NM-x1G"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <state key="normal" title="Collect"/>
-                                                    <connections>
-                                                        <action selector="CollectTapped:" destination="mSq-1u-gKw" eventType="touchUpInside" id="mBi-6z-Hgb"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNn-2k-F0O">
                                                     <rect key="frame" x="103" y="65" width="235" height="21"/>
                                                     <constraints>
@@ -167,16 +156,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="SNg-j3-FrS" secondAttribute="bottom" constant="10" id="0zc-Ie-5G6"/>
                                                 <constraint firstItem="FZt-UX-DHQ" firstAttribute="top" secondItem="S75-Gk-6zq" secondAttribute="top" id="9ki-vU-sIk"/>
                                                 <constraint firstItem="LNn-2k-F0O" firstAttribute="top" secondItem="FZt-UX-DHQ" secondAttribute="bottom" constant="5" id="C4d-1J-ThJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="FLY-Pv-M5I" secondAttribute="bottom" id="KdM-KI-bXL"/>
-                                                <constraint firstItem="FLY-Pv-M5I" firstAttribute="leading" secondItem="FZt-UX-DHQ" secondAttribute="trailing" id="U8x-Am-v0q"/>
                                                 <constraint firstItem="FZt-UX-DHQ" firstAttribute="leading" secondItem="SNg-j3-FrS" secondAttribute="trailing" constant="8" symbolic="YES" id="VbS-UN-yFL"/>
                                                 <constraint firstItem="SNg-j3-FrS" firstAttribute="leading" secondItem="S75-Gk-6zq" secondAttribute="leadingMargin" id="dkq-Gk-gDx"/>
                                                 <constraint firstItem="SNg-j3-FrS" firstAttribute="top" secondItem="S75-Gk-6zq" secondAttribute="top" constant="11.5" id="xID-3q-FlE"/>
-                                                <constraint firstItem="FLY-Pv-M5I" firstAttribute="top" secondItem="S75-Gk-6zq" secondAttribute="top" id="zdG-y7-bIT"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="CollectButton" destination="FLY-Pv-M5I" id="RRG-L7-5U7"/>
                                             <outlet property="VoucherImage" destination="SNg-j3-FrS" id="qjd-ib-OrG"/>
                                             <outlet property="dateLabel" destination="LNn-2k-F0O" id="1ZC-ch-0ND"/>
                                             <outlet property="nameLabel" destination="FZt-UX-DHQ" id="P8t-3b-NR9"/>
