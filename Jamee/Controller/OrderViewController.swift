@@ -266,6 +266,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
                 timeEmptyLabel.textColor = UIColor.pinkBackground()
             }
         else {
+            time = timeTextField.text!
             for _ in 0..<number!.intValue{
                 ItemPicked.append(item!)
                 print(item?.price as Any)
