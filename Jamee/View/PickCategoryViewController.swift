@@ -63,84 +63,53 @@ class PickCategoryViewController: UIViewController {
         pizzaImage.image = UIImage(named: itemMenu.Pizza.imageItem)?.withTintColor(UIColor.pinkBackground())
         
         switch tag {
-        case itemMenu.Rice.rawValue:
+        case itemMenu.Rice.tag:
             riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             riceView.layer.borderWidth = 2
-            //cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
             cookieView.layer.borderWidth = 0
-          //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             milkTeaView.layer.borderWidth = 0
-           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             coffeeView.layer.borderWidth = 0
-          //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             chickeView.layer.borderWidth = 0
-           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             pizzaView.layer.borderWidth = 0
-        case itemMenu.Cookie.rawValue:
-           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
+        case itemMenu.Cookie.tag:
             riceView.layer.borderWidth = 0
-           cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
+            cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
             cookieView.layer.borderWidth = 2
-            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
             milkTeaView.layer.borderWidth = 0
-           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             coffeeView.layer.borderWidth = 0
-          //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             chickeView.layer.borderWidth = 0
-           // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
             pizzaView.layer.borderWidth = 0
-        case itemMenu.BubbleTea.rawValue:
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             riceView.layer.borderWidth = 0
-            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
-             cookieView.layer.borderWidth = 0
-             milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+        case itemMenu.BubbleTea.tag:
+            riceView.layer.borderWidth = 0
+            cookieView.layer.borderWidth = 0
+            milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
             milkTeaView.layer.borderWidth = 2
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             coffeeView.layer.borderWidth = 0
-           //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             chickeView.layer.borderWidth = 0
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             pizzaView.layer.borderWidth = 0
-        case itemMenu.Coffee.rawValue:
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             riceView.layer.borderWidth = 0
-            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
-             cookieView.layer.borderWidth = 0
-            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            coffeeView.layer.borderWidth = 0
+            chickeView.layer.borderWidth = 0
+            pizzaView.layer.borderWidth = 0
+        case itemMenu.Coffee.tag:
+            riceView.layer.borderWidth = 0
+            cookieView.layer.borderWidth = 0
             milkTeaView.layer.borderWidth = 0
             coffeeView.layer.borderColor = UIColor.pinkBackground().cgColor
-             coffeeView.layer.borderWidth = 2
-           //  riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             chickeView.layer.borderWidth = 0
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             pizzaView.layer.borderWidth = 0
-        case itemMenu.Chicken.rawValue:
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             riceView.layer.borderWidth = 0
-            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
-             cookieView.layer.borderWidth = 0
-            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            coffeeView.layer.borderWidth = 2
+            chickeView.layer.borderWidth = 0
+            pizzaView.layer.borderWidth = 0
+        case itemMenu.Chicken.tag:
+            riceView.layer.borderWidth = 0
+            cookieView.layer.borderWidth = 0
             milkTeaView.layer.borderWidth = 0
-           // coffeeView.layer.borderColor = UIColor.pinkBackground().cgColor
-             coffeeView.layer.borderWidth = 0
+            coffeeView.layer.borderWidth = 0
             chickeView.layer.borderColor = UIColor.pinkBackground().cgColor
-             chickeView.layer.borderWidth = 2
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             pizzaView.layer.borderWidth = 0
-        case itemMenu.Pizza.rawValue:
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             riceView.layer.borderWidth = 0
-            // cookieView.layer.borderColor = UIColor.pinkBackground().cgColor
-             cookieView.layer.borderWidth = 0
-            //milkTeaView.layer.borderColor = UIColor.pinkBackground().cgColor
+            chickeView.layer.borderWidth = 2
+            pizzaView.layer.borderWidth = 0
+        case itemMenu.Pizza.tag:
+            riceView.layer.borderWidth = 0
+            cookieView.layer.borderWidth = 0
             milkTeaView.layer.borderWidth = 0
-           // coffeeView.layer.borderColor = UIColor.pinkBackground().cgColor
-             coffeeView.layer.borderWidth = 0
-           // chickeView.layer.borderColor = UIColor.pinkBackground().cgColor
-             chickeView.layer.borderWidth = 0
-            // riceView.layer.borderColor = UIColor.pinkBackground().cgColor
-             pizzaView.layer.borderWidth = 2
+            coffeeView.layer.borderWidth = 0
+            chickeView.layer.borderWidth = 0
+            pizzaView.layer.borderWidth = 2
             pizzaView.layer.borderColor = UIColor.pinkBackground().cgColor
         default:
             print("no data")
@@ -174,27 +143,27 @@ class PickCategoryViewController: UIViewController {
 
     
     @objc func ricePicker(_ sender: UITapGestureRecognizer){
-        self.delegate!.pickCategory(listDeal: listRice(),index: 0)
+        self.delegate!.pickCategory(listDeal: listRice(),index: 1)
         self.dismiss(animated: true, completion: nil)
     }
     @objc func cookiePicker(_ sender: UITapGestureRecognizer){
-        self.delegate!.pickCategory(listDeal: listCookie(),index: 1)
+        self.delegate!.pickCategory(listDeal: listCookie(),index: 2)
         self.dismiss(animated: true, completion: nil)
     }
     @objc func milkTeaPicker(_ sender: UITapGestureRecognizer){
-        self.delegate!.pickCategory(listDeal: listMilkTea(),index: 2)
+        self.delegate!.pickCategory(listDeal: listMilkTea(),index: 3)
         self.dismiss(animated: true, completion: nil)
     }
     @objc func coffeePicker(_ sender: UITapGestureRecognizer){
-        self.delegate!.pickCategory(listDeal: listCoffee(),index: 3)
+        self.delegate!.pickCategory(listDeal: listCoffee(),index: 4)
         self.dismiss(animated: true, completion: nil)
     }
     @objc func chickenPicker(_ sender: UITapGestureRecognizer){
-        self.delegate!.pickCategory(listDeal: listChicken(),index: 4)
+        self.delegate!.pickCategory(listDeal: listChicken(),index: 5)
         self.dismiss(animated: true, completion: nil)
     }
     @objc func pizzaPicker(_ sender: UITapGestureRecognizer){
-        self.delegate!.pickCategory(listDeal: listPizza(),index: 5)
+        self.delegate!.pickCategory(listDeal: listPizza(),index: 6)
         self.dismiss(animated: true, completion: nil)
     }
 }

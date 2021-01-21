@@ -7,7 +7,7 @@
 
 import UIKit
 
-var addressPicker : String = "Nguyễn Tri Phương"
+var addressPicker : String = "55 Nguyễn Tri Phương, Q5"
 var time: String = "9h00 - 10h00"
 var ItemPicked = [Item]()
 class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate {
@@ -60,6 +60,10 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         navigationController?.navigationBar.tintColor = UIColor.white
     }
     func setView(){
+        addressTextField.attributedPlaceholder = NSAttributedString(string: addressPicker,
+                                                                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        addressTextField.setRightView(image: UIImage(systemName:"arrowtriangle.down.fill")!,color: UIColor.gray)
+        
         numberLabel.text = "\(number)"
         sizeMButton.isSelected = true
         sugar100Button.isSelected = true
@@ -266,8 +270,10 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
                 timeEmptyLabel.textColor = UIColor.pinkBackground()
             }
         else {
-            time = timeTextField.text!
-            for _ in 0..<number!.intValue{
+            if (timeTextField.text?.isEmpty == false) {
+                time = timeTextField.text!
+            }
+            for _ in 0..<number!.intValue {
                 ItemPicked.append(item!)
                 print(item?.price as Any)
                 let priceItem = Double(item!.price)

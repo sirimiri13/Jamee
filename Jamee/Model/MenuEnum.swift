@@ -47,5 +47,22 @@ enum itemMenu: Int, CaseIterable{
             return "pizza-1"
         }
     }
+    var tag: Int {
+        switch self {
+        case .Rice:
+            return 1
+        case .Cookie:
+            return 2
+        case .BubbleTea:
+            return 3
+        case .Coffee:
+            return 4
+        case .Chicken:
+            return 5
+        case .Pizza:
+            return 6
+        }
+    }
+    
     
 }

@@ -40,6 +40,7 @@ class QRViewController: UIViewController {
     @objc func closeView(_ sender: Any){
         ItemPicked.removeAll()
         totalPrice = 0.000
+        time = "9h00 - 10h00"
         navigationController?.popToRootViewController(animated: true)
     }
   

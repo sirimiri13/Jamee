@@ -24,8 +24,11 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         self.listDeal = listDeal
         self.indexCategory = index
         PickCategoryVC.tag = index
-        setView()
+        numberLabel.text = "\(listDeal.count) kết quả"
+        indexCategoryLabel.text = "\(index - 1)"
         dealTableView.reloadData()
+       
+      
     }
     
     
@@ -64,6 +67,8 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         super.viewDidLoad()
         setView()
         self.dealTableView.tableFooterView = UIView(frame: CGRect.zero)
+        self.hideKeyboardWhenTappedAround()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
@@ -72,9 +77,10 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
    
     
     func setView(){
+        navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
         view.backgroundColor = UIColor.whiteCustom()
         let searchBar = UISearchBar()
-        self.navigationItem.titleView = searchBar
+        navigationItem.titleView = searchBar
         searchBar.isTranslucent = true
         searchBar.searchBarStyle = .minimal
         searchBar.delegate = self
@@ -90,7 +96,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         titleCategory.text = "Danh mục"
         titleCategory.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         indexCategoryLabel.textColor = UIColor.pinkBackground()
-        indexCategoryLabel.text = "\(indexCategory + 1)"
+        indexCategoryLabel.text = "\(indexCategory)"
         
         titleFilter.text = "Bộ lọc"
         titleFilter.font = UIFont.systemFont(ofSize: 17, weight: .bold)

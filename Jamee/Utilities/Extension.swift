@@ -140,6 +140,16 @@ extension UITextField{
            self.layer.addSublayer(bottomLine)
            
        }
+    func setRightView(image: UIImage, color: UIColor) {
+            let iconView = UIImageView(frame: CGRect(x: 15, y: 15, width: 15, height: 15)) // set your Own size
+            iconView.image = image
+            iconView.tintColor = color
+            let iconContainerView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 35, height: 45))
+            iconContainerView.addSubview(iconView)
+            rightView = iconContainerView
+            rightViewMode = .always
+        }
+
 }
 
 extension UIViewController {

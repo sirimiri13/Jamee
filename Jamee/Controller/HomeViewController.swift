@@ -146,32 +146,32 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         case itemMenu.Rice.rawValue:
             let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
             vc.listDeal = listRice()
-            vc.indexCategory = itemMenu.Rice.rawValue
+            vc.indexCategory = itemMenu.Rice.tag
             navigationController?.pushViewController(vc, animated: true)
         case itemMenu.Cookie.rawValue:
             let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
             vc.listDeal = listCookie()
-            vc.indexCategory = itemMenu.Cookie.rawValue
+            vc.indexCategory = itemMenu.Cookie.tag
             navigationController?.pushViewController(vc, animated: true)
         case itemMenu.BubbleTea.rawValue:
             let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
             vc.listDeal = listMilkTea()
-            vc.indexCategory = itemMenu.BubbleTea.rawValue
+            vc.indexCategory = itemMenu.BubbleTea.tag
             navigationController?.pushViewController(vc, animated: true)
         case itemMenu.Coffee.rawValue:
             let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
             vc.listDeal = listCoffee()
-            vc.indexCategory = itemMenu.Cookie.rawValue
+            vc.indexCategory = itemMenu.Cookie.tag
             navigationController?.pushViewController(vc, animated: true)
         case itemMenu.Chicken.rawValue:
             let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
             vc.listDeal = listChicken()
-            vc.indexCategory = itemMenu.Chicken.rawValue
+            vc.indexCategory = itemMenu.Chicken.tag
             navigationController?.pushViewController(vc, animated: true)
         case itemMenu.Pizza.rawValue:
             let vc = storyboard?.instantiateViewController(identifier: "MenuFilterViewController") as! MenuFilterViewController
             vc.listDeal = listPizza()
-            vc.indexCategory = itemMenu.Pizza.rawValue
+            vc.indexCategory = itemMenu.Pizza.tag
             navigationController?.pushViewController(vc, animated: true)
         default:
             print("done")
