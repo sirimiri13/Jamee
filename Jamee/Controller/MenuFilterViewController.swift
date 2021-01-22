@@ -25,11 +25,12 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         self.listDeal = listDeal
         numberLabel.text = "\(listDeal.count) kết quả"
         PickCategoryVC.currentCategory = categoryPicked
-        indexCategoryLabel.text = currentCategory
+        indexCategoryLabel.text = categoryPicked
         self.indexCategory = index
-        self.currentCategory = categoryPicked
+      //  self.currentCategory = categoryPicked
         dealTableView.reloadData()
         print(self.currentCategory)
+        
     }
     
     let searchBar = UISearchBar()

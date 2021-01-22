@@ -97,6 +97,8 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         else {
             sizeMButton.isSelected = true
             sizeLButton.isSelected = false
+            let priceItem = Double(item!.price)! - 6.000
+            item?.price = "\(priceItem)"
         }
     }
     @IBAction func sizeLTapped(_ sender: Any) {
@@ -104,10 +106,13 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
         {
             sizeLButton.isSelected = false
             sizeMButton.isSelected = true
+            
         }
         else {
             sizeLButton.isSelected = true
             sizeMButton.isSelected = false
+            let priceItem = Double(item!.price)! + 6.000
+            item?.price = "\(priceItem)"
         }
 
     }
