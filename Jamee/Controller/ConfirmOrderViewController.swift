@@ -89,13 +89,14 @@ class ConfirmOrderViewController: UIViewController {
         
         let priceItem = UILabel()
         priceItem.textColor = .black
-        priceItem.text = "\(ItemPicked[0].price) đồng"
+        let priceDouble = Double(ItemPicked[0].price)
+        priceItem.text = "\(String(format:" %.3f", priceDouble!)) đồng"
         priceItem.translatesAutoresizingMaskIntoConstraints = false
         viewItem.addSubview(priceItem)
         NSLayoutConstraint.activate([
             priceItem.topAnchor.constraint(equalTo: viewItem.topAnchor, constant: 20),
-            priceItem.leftAnchor.constraint(equalTo: nameItem.rightAnchor, constant: 20),
-            priceItem.widthAnchor.constraint(equalToConstant: 100),
+            priceItem.leftAnchor.constraint(equalTo: nameItem.rightAnchor, constant: 10),
+            priceItem.widthAnchor.constraint(equalToConstant: 150),
             priceItem.heightAnchor.constraint(equalToConstant: 30)
         ])
         
@@ -134,7 +135,7 @@ class ConfirmOrderViewController: UIViewController {
         price.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             price.topAnchor.constraint(equalTo: priceView.topAnchor, constant: 5),
-            price.rightAnchor.constraint(equalTo: priceView.rightAnchor,constant: -10),
+            price.rightAnchor.constraint(equalTo: priceView.rightAnchor,constant: -5),
             price.widthAnchor.constraint(equalToConstant: 120),
             price.heightAnchor.constraint(equalToConstant: 30)
         ])

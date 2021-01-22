@@ -101,8 +101,9 @@ class MyVoucherViewController: UIViewController,UITableViewDelegate,UITableViewD
             cell.dateLabel.text = "HSD: \(listData[indexPath.row].date)";
             
 
-            let collectButton = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 20))
-            collectButton.setTitle("Collect", for: .normal)
+            let collectButton = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 20))
+            collectButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+            collectButton.setTitle("Lấy mã", for: .normal)
             collectButton.setTitleColor(UIColor.pinkBackground(), for: .normal)
             collectButton.tag = indexPath.row
             collectButton.addTarget(self, action: #selector(collectTapped(_:)), for: .touchUpInside)
@@ -121,7 +122,7 @@ class MyVoucherViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     @objc func collectTapped(_ sender: UIButton){
-        sender.setTitle("Collected", for: .normal)
+        sender.setTitle("Đã lấy", for: .normal)
         sender.setTitleColor(UIColor.gray, for: .normal)
         listMyVoucher.append(listData[sender.tag])
         if (listMyVoucher.count > 1){

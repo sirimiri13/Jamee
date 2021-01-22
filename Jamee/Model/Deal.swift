@@ -27,7 +27,7 @@ struct Deal {
 func listRice() -> [Deal]{
     var listDeal = [Deal]()
     listDeal.append(Deal(logo: "hn", title: "Cơm gà Hải Nam", subtitle: "Giảm 15%", address: "55 Nguyễn Tri Phương, Q5",date: "02/02/2021"))
-    listDeal.append(Deal(logo: "plt", title: "Cơm Phúc Lộc Thọ", subtitle: "Giảm 10%", address: "31/2 Nguyễn Tri Phương, Q5",date: "03/02/2021"))
+    listDeal.append(Deal(logo: "plt", title: "Phúc Lộc Thọ", subtitle: "Giảm 10%", address: "31/2 Nguyễn Tri Phương, Q5",date: "03/02/2021"))
     return listDeal
 }
 

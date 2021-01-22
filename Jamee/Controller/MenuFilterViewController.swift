@@ -12,7 +12,6 @@ class itemCell: UITableViewCell{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var collectButton: UIButton!
 }
 
 class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, PickCategoryProtocol, FilterProtocol{
@@ -154,15 +153,22 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! itemCell
         cell.logoImage.image = UIImage(named: listDeal[indexPath.row].logo)
         cell.titleLabel.text = listDeal[indexPath.row].title
-        cell.titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        cell.titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         cell.subtitleLabel.text = listDeal[indexPath.row].subtitle
         cell.subtitleLabel.numberOfLines = 0
         cell.dateLabel.text = "HSD: \(listDeal[indexPath.row].date)"
-        cell.collectButton.setTitle("Collect", for: .normal)
-        cell.collectButton.tintColor = UIColor.blue
+        let collectButton = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 20))
+        collectButton.setTitle("Lấy mã", for: .normal)
+        collectButton.setTitleColor(UIColor.pinkBackground(), for: .normal)
+        collectButton.tag = indexPath.row
+        collectButton.addTarget(self, action: #selector(collectTapped(_:)), for: .touchUpInside)
+        cell.accessoryView = collectButton
         return cell
     }
-  
+    @objc func collectTapped(_ sender: UIButton){
+        sender.setTitle("Đã lấy", for: .normal)
+        sender.setTitleColor(UIColor.gray, for: .normal)
+    }
 
 
 }

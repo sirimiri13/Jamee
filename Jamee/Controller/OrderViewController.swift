@@ -199,6 +199,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time3Button.isSelected = false
             time4Button.isSelected = false
             timeTextField.alpha = 0
+            timeEmptyLabel.alpha = 0
         }
      }
     
@@ -220,6 +221,7 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time3Button.isSelected = false
             time4Button.isSelected = false
             timeTextField.alpha = 0
+            timeEmptyLabel.alpha = 0
         }
     }
     @IBAction func Time3(_ sender: Any) {
@@ -240,12 +242,12 @@ class OrderViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDat
             time3Button.isSelected = true
             time4Button.isSelected = false
             timeTextField.alpha = 0
+            timeEmptyLabel.alpha = 0
         }
     }
     @IBAction func Time4(_ sender: Any) {
         if time4Button.isSelected
         {
-            timeTextField.alpha = 1
             timeTextField.styleTextField(color: UIColor.pinkBackground())
             time = timeTextField.text!
             time1Button.isSelected = false
