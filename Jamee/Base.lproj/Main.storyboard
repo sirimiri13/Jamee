@@ -329,7 +329,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="198" height="65"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hax-jK-hjt">
-                                                <rect key="frame" x="75" y="10" width="45" height="21"/>
+                                                <rect key="frame" x="10" y="10" width="175" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="Cl9-nT-Ecb"/>
                                                 </constraints>
@@ -348,12 +348,12 @@
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="hax-jK-hjt" secondAttribute="trailing" constant="78" id="LJX-Ik-ke1"/>
+                                            <constraint firstAttribute="trailing" secondItem="hax-jK-hjt" secondAttribute="trailing" constant="13" id="LJX-Ik-ke1"/>
                                             <constraint firstItem="hIk-ay-1HJ" firstAttribute="leading" secondItem="vQ5-7L-xNO" secondAttribute="leading" constant="10" id="M3Q-UB-8br"/>
                                             <constraint firstAttribute="trailing" secondItem="hIk-ay-1HJ" secondAttribute="trailing" constant="13" id="W0n-Mj-N4k"/>
                                             <constraint firstItem="hax-jK-hjt" firstAttribute="top" secondItem="vQ5-7L-xNO" secondAttribute="top" constant="10" id="Y7U-QW-Fkm"/>
                                             <constraint firstAttribute="width" constant="198" id="dIq-Cd-vbr"/>
-                                            <constraint firstItem="hax-jK-hjt" firstAttribute="leading" secondItem="vQ5-7L-xNO" secondAttribute="leading" constant="75" id="pTZ-xz-cgr"/>
+                                            <constraint firstItem="hax-jK-hjt" firstAttribute="leading" secondItem="vQ5-7L-xNO" secondAttribute="leading" constant="10" id="pTZ-xz-cgr"/>
                                             <constraint firstAttribute="bottom" secondItem="hIk-ay-1HJ" secondAttribute="bottom" constant="5" id="vK0-8n-0Pn"/>
                                         </constraints>
                                     </view>
@@ -429,7 +429,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOJ-77-csP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7939.130434782609" y="-1493.3035714285713"/>
+            <point key="canvasLocation" x="-7939.130434782609" y="-1493.4782608695652"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="yBw-uL-OSI">
@@ -949,13 +949,13 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAM-47-9Wc">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAM-47-9Wc">
                                                 <rect key="frame" x="15" y="39" width="100" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="gSD-gN-TES"/>
                                                     <constraint firstAttribute="width" constant="100" id="hTs-jN-1uf"/>
                                                 </constraints>
-                                                <state key="normal" title="Size M" image="circle" catalog="system">
+                                                <state key="normal" title=" Size M" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -963,7 +963,7 @@
                                                     <action selector="sizeMtTapped:" destination="8Sk-ie-CPb" eventType="touchUpInside" id="mI0-Ce-WP3"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvs-Qp-XWu">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvs-Qp-XWu">
                                                 <rect key="frame" x="15" y="71" width="100" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="0gx-2j-2ud"/>
@@ -997,7 +997,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="83Y-QH-kFS"/>
                                                     <constraint firstAttribute="width" constant="150" id="QcU-ga-bde"/>
                                                 </constraints>
-                                                <state key="normal" title="50 % đường" image="circle" catalog="system">
+                                                <state key="normal" title=" 50 % đường" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -1011,7 +1011,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="9K2-nv-BFF"/>
                                                     <constraint firstAttribute="height" constant="22" id="OQk-n4-Wxd"/>
                                                 </constraints>
-                                                <state key="normal" title="30% đường" image="circle" catalog="system">
+                                                <state key="normal" title=" 30% đường" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -1025,7 +1025,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="Lud-Yh-KL5"/>
                                                     <constraint firstAttribute="width" constant="150" id="Wzt-DY-Gle"/>
                                                 </constraints>
-                                                <state key="normal" title="100% đường" image="circle" catalog="system">
+                                                <state key="normal" title=" 100% đường" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -1039,7 +1039,7 @@
                                                     <constraint firstAttribute="width" constant="150" id="Y7u-HD-MqK"/>
                                                     <constraint firstAttribute="height" constant="22" id="qTF-JO-ZqQ"/>
                                                 </constraints>
-                                                <state key="normal" title="10h00 - 11h00" image="circle" catalog="system">
+                                                <state key="normal" title=" 10h00 - 11h00" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -1053,7 +1053,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="CLe-7p-bPY"/>
                                                     <constraint firstAttribute="width" constant="70" id="atM-AM-pKb"/>
                                                 </constraints>
-                                                <state key="normal" title="Khác" image="circle" catalog="system">
+                                                <state key="normal" title=" Khác" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -1067,7 +1067,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="3qe-eo-FVh"/>
                                                     <constraint firstAttribute="width" constant="150" id="J81-CR-WvM"/>
                                                 </constraints>
-                                                <state key="normal" title="11h00 - 12h00" image="circle" catalog="system">
+                                                <state key="normal" title=" 11h00 - 12h00" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>
@@ -1081,7 +1081,7 @@
                                                     <constraint firstAttribute="height" constant="22" id="Cj6-rZ-EdV"/>
                                                     <constraint firstAttribute="width" constant="150" id="TLu-jU-iH4"/>
                                                 </constraints>
-                                                <state key="normal" title="9h00 - 10h00" image="circle" catalog="system">
+                                                <state key="normal" title=" 9h00 - 10h00" image="circle" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
                                                 <state key="selected" image="checkmark.circle.fill" catalog="system"/>

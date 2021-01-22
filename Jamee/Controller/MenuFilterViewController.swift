@@ -21,21 +21,24 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         typeFilter.text = type
     }
     
-    func pickCategory(listDeal: [Deal],index: Int) {
+    func pickCategory(listDeal: [Deal],categoryPicked: String,index: Int) {
         self.listDeal = listDeal
-        self.indexCategory = index
-        PickCategoryVC.tag = index
         numberLabel.text = "\(listDeal.count) kết quả"
-        indexCategoryLabel.text = "\(index - 1)"
+        PickCategoryVC.currentCategory = categoryPicked
+        indexCategoryLabel.text = currentCategory
+        self.indexCategory = index
+        self.currentCategory = categoryPicked
         dealTableView.reloadData()
-       
-      
+        print(self.currentCategory)
     }
     
     let searchBar = UISearchBar()
     var isCategory = false
     var isTextFieldEditing: Bool = false
     var isSearching: Bool = false
+    var listDeal = [Deal]()
+    var indexCategory: Int = 0
+    var currentCategory : String = ""
     
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var categoryView: UIView!
@@ -47,8 +50,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
     @IBOutlet weak var dealTableView: UITableView!
     
     @IBOutlet weak var footerView: UIView!
-    var listDeal = [Deal]()
-    var indexCategory: Int = 0
+ 
     enum typeOfFilter: Int,CaseIterable {
         case New
         case Near
@@ -68,7 +70,6 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         super.viewDidLoad()
         setView()
         self.dealTableView.tableFooterView = UIView(frame: CGRect.zero)
-//        self.hideKeyboardWhenTappedAround()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -80,14 +81,11 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
     func setView(){
         navigationController?.navigationBar.barTintColor = UIColor.pinkBackground()
         view.backgroundColor = UIColor.whiteCustom()
-    
         navigationItem.titleView = searchBar
-      //  searchBar.isTranslucent = true
         searchBar.placeholder = "Search...."
         searchBar.searchBarStyle = .minimal
         searchBar.delegate = self
         searchBar.sizeToFit()
-       // searchBar.showsCancelButton = true
         numberLabel.text = "\(listDeal.count) kết quả"
         numberLabel.textColor = UIColor.pinkBackground()
         numberLabel.font = UIFont.systemFont(ofSize: 17, weight: .bold)
@@ -99,8 +97,8 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         titleCategory.text = "Danh mục"
         titleCategory.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         indexCategoryLabel.textColor = UIColor.pinkBackground()
-        indexCategoryLabel.text = "\(indexCategory)"
-        
+       // indexCategoryLabel.text = "\(indexCategory)"
+        indexCategoryLabel.text = currentCategory
         titleFilter.text = "Bộ lọc"
         titleFilter.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         typeFilter.textColor = UIColor.pinkBackground()
@@ -117,6 +115,7 @@ class MenuFilterViewController: UIViewController,UITableViewDataSource, UITableV
         let pickCategoryVC = PickCategoryViewController()
         pickCategoryVC.transitioningDelegate = self
         pickCategoryVC.modalPresentationStyle = .custom
+        pickCategoryVC.currentCategory = currentCategory
         pickCategoryVC.tag = indexCategory
         pickCategoryVC.delegate = self
         return pickCategoryVC
